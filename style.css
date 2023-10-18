@@ -1,0 +1,23 @@
+.nav-container{
+    position: relative;
+    top: 50px;
+    margin-top: -40px;
+}
+.nav-link{
+    color: black;
+}
+
+.main-content{
+  padding-top:90px;
+}
+
+.padding-hero{
+    padding-bottom: 130px;
+    padding-top: 80px;
+    border-bottom: 2px solid white;
+}
+
+
+
+
+
