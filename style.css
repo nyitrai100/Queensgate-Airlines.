@@ -1,12 +1,27 @@
 .nav-container{
     position: relative;
-    top: 50px;
-    margin-top: -40px;
+    top: 90px;
+    margin-top: -88px;
+    z-index: 2;
+    background-color: transparent;
 }
 .nav-link{
-    color: black;
+    color: white;
 }
-
+.firstParagraph{
+    margin-top: -60px;
+    font-weight: bold;
+    line-height: 60px;
+    font-size: 30px;
+}
+.bg-img{
+    background-image: url("https://images.unsplash.com/photo-1609408341205-861253559a83?auto=format&fit=crop&q=80&w=3174&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") ;
+    background-size: cover;
+    width:100%;
+}
+.blue-color{
+    color: rgb(36, 94, 165);
+}
 .main-content{
   padding-top:90px;
 }
@@ -16,7 +31,19 @@
     padding-top: 80px;
     border-bottom: 2px solid white;
 }
-
+.hero-picture{
+    border-radius: 10%;
+    border:1px solid white;
+    box-shadow: black 5px 1px 2px 2px;
+}
+.login{
+    display: none;
+    position: fixed;
+    left: 43%;
+    top:20%;
+    border: 10px solid white;
+    color: white;
+}
 
 
 
