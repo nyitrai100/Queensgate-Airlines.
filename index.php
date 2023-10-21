@@ -23,7 +23,7 @@
                 <a class="nav-link" href="#">Home</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="#">Browser</a>
+                <a class="nav-link" href="./browser.php">Browser</a>
                 </li>
                 <li class="nav-item">
                 <a class="nav-link" href="#">Contact</a>
