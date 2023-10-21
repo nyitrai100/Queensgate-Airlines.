@@ -1,3 +1,7 @@
+<?php 
+  session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -67,15 +71,15 @@
     <div class="row">
       <div class="col-md-6"> 
         <div class="card"> 
-          <form onsubmit="event.preventDefault()" class="box">
+          <form action="" method="post" class="box">
             <div class="d-flex justify-content-between align-items-center">
               <span class="close-btn text-white p-2 cursor-pointer" onclick="closeLogin()">&times;</span>
             </div>
             <h1>Login</h1>
             <p class="text-muted"> Please enter your login and password!</p> 
-            <input type="text" name="" placeholder="Username">
-            <input type="password" name="" placeholder="Password">
-            <input type="submit" name="" value="Login" href="#"> 
+            <input type="text" name="uid" placeholder="Username">
+            <input type="password" name="pwd" placeholder="Password">
+            <input type="submit" name="submit" value="Login"> 
           </form> 
         </div> 
       </div>

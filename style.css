@@ -44,7 +44,8 @@
 
 
 /* login css starts*/
-.login{   
+.login{  
+    display: none; 
     position: fixed;
     top: 20%;
     left: 23%;
