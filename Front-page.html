@@ -47,7 +47,7 @@
           <div>
             <div class="text-center text-md-start ">
                 
-              <p class="lead text-white firstParagraph "> Explore<br/> Top Flights  to Europe <br/> with <br/>Our Platform<br/></p>
+              <p class="lead text-white firstParagraph "> Explore<br/> Top Flights  to Europe <br/> <span class="text-black">with</span> <br/>Our Platform<br/></p>
             </div>
             <!-- searching was here -->
           
@@ -63,12 +63,24 @@
     </div>
   </div>
        <!-- login starts -->
-<div id="login-div" class="login" >
-  <div class="popup">
-      <span class="close-btn" onclick="closeLogin()">&times;</span>
-      <p>This is the login popup</p>
+  <div class="container login" id="login-div">
+    <div class="row">
+      <div class="col-md-6"> 
+        <div class="card"> 
+          <form onsubmit="event.preventDefault()" class="box">
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="close-btn text-white p-2 cursor-pointer" onclick="closeLogin()">&times;</span>
+            </div>
+            <h1>Login</h1>
+            <p class="text-muted"> Please enter your login and password!</p> 
+            <input type="text" name="" placeholder="Username">
+            <input type="password" name="" placeholder="Password">
+            <input type="submit" name="" value="Login" href="#"> 
+          </form> 
+        </div> 
+      </div>
+    </div>
   </div>
-</div>
 <!-- login ends -->
 <!-- main content starts -->
 <div class="container-fluid bg-light text-black pb-5">

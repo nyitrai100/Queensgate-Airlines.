@@ -36,15 +36,85 @@
     border:1px solid white;
     box-shadow: black 5px 1px 2px 2px;
 }
-.login{
-    display: none;
-    position: fixed;
-    left: 43%;
-    top:20%;
-    border: 10px solid white;
-    color: white;
+.text-black{
+    color: black;
+    
 }
 
 
 
+/* login css starts*/
+.login{   
+    position: fixed;
+    top: 20%;
+    left: 23%;
+    right: 20%;
+    margin-left: auto; 
+    margin-right: auto; 
+}
+.card{
+    margin-bottom:20px;
+    border:none;
+    width: 50vw;
+}
 
+.box {
+    width: 50vw;
+    background: #191919;
+    text-align: center;
+
+    border: 2px solid black;
+    padding-bottom: 40px;
+}
+
+.box input[type="text"],
+.box input[type="password"] {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #3498db;
+    padding: 10px 10px;
+    width: 250px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s
+}
+
+.box h1 {
+    color: white;
+    text-transform: uppercase;
+    font-weight: 500
+}
+
+.box input[type="text"]:focus,
+.box input[type="password"]:focus {
+    width: 300px;
+    border-color: #2ecc71
+}
+
+.box input[type="submit"] {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #2ecc71;
+    padding: 14px 40px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer
+}
+
+.box input[type="submit"]:hover {
+    background: #2ecc71
+}
+
+.cursor-pointer {
+    cursor: pointer;
+  }
+/* login css ends*/
