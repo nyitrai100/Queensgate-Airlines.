@@ -71,7 +71,7 @@
     <div class="row">
       <div class="col-md-6"> 
         <div class="card"> 
-          <form action="" method="post" class="box">
+          <form action="includes/login-inc.php" method="post" class="box">
             <div class="d-flex justify-content-between align-items-center">
               <span class="close-btn text-white p-2 cursor-pointer" onclick="closeLogin()">&times;</span>
             </div>
