@@ -89,8 +89,7 @@
                     <th>Date</th>
                     <th>Aircraft Make</th>
                     <th>Aircraft Model</th>
-                    <th>Crew Member First Name</th>
-                    <th>Crew Member Last Name</th>
+                    <th>Crew Member Name</th>
                     <th> Details</th>
                 </tr>";
 
@@ -103,8 +102,7 @@
                     echo "<td>{$flight['date']}</td>";
                     echo "<td>{$flight['make']}</td>";
                     echo "<td>{$flight['model']}</td>";
-                    echo "<td>{$flight['first_name']}</td>";
-                    echo "<td>{$flight['last_name']}</td>";
+                    echo "<td>{$flight['first_name']} {$flight['last_name']}</td>";
                     echo "<td><a href="."> More </a> </td>";
                     echo "</tr>";
                 }
