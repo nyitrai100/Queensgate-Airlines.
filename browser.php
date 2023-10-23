@@ -74,7 +74,7 @@
 
 
 
- <section class="container mt-5 bg-light">
+ <!-- <section class="container mt-5 bg-light">
      
      <?php
         session_start();
@@ -115,7 +115,54 @@
             echo "No data available.";
         }
 ?>
-    </section>
+    </section> -->
+    <section class="container mt-5 bg-light">
+    <?php
+    session_start();
+    if (isset($_SESSION['flights'])) {
+        $flights = $_SESSION['flights'];
+
+        // Output the table
+        echo "<table border='1'>
+                <thead>
+                    <tr>
+                        <th>Flight ID</th>
+                        <th>Flight Number</th>
+                        <th>Aircraft Make</th>
+                        <th>Aircraft Model</th>
+                        <th>Flight Date</th>
+                        <th>Flight Origin</th>
+                        <th>Flight Destination</th>
+                        <th>Crew Members</th>
+                    </tr>
+                </thead>
+                <tbody>";
+
+        if ($flights) {
+            foreach ($flights as $flight) {
+                echo "<tr>
+                        <td>{$flight['flight_id']}</td>
+                        <td>{$flight['flight_num']}</td>
+                        <td>{$flight['aircraft_make']}</td>
+                        <td>{$flight['aircraft_model']}</td>
+                        <td>{$flight['flight_date']}</td>
+                        <td>{$flight['flight_origin']}</td>
+                        <td>{$flight['flight_destination']}</td>
+                        <td>{$flight['crew_members']}</td>
+                    </tr>";
+            }
+        } else {
+            echo "<tr><td colspan='8'>No flights found.</td></tr>";
+        }
+
+        echo "</tbody></table>";
+    } else {
+        echo "No data available.";
+    }
+    ?>
+</section>
+
+    
 
 <!-- bootstrap links starts -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
