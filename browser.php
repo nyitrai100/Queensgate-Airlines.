@@ -68,64 +68,19 @@
     </div>
 </div>
 <!-- search ends -->
-
-
-
-
-
-
- <!-- <section class="container mt-5 bg-light">
-     
-     <?php
-        session_start();
-        if (isset($_SESSION['flights'])) {
-            $flights = $_SESSION['flights'];
-
-            echo "<table border='1'>";
-            echo "<tr>
-                    <th>Flight Number</th>
-                    <th>Origin</th>
-                    <th>Destination</th>
-                    <th>Date</th>
-                    <th>Aircraft Make</th>
-                    <th>Aircraft Model</th>
-                    <th>Crew Member Name</th>
-                    <th> Details</th>
-                </tr>";
-
-            if ($flights) {
-                foreach ($flights as $flight) {
-                    echo "<tr>";
-                    echo "<td>{$flight['flight_num']}</td>";
-                    echo "<td>{$flight['origin']}</td>";
-                    echo "<td>{$flight['destination']}</td>";
-                    echo "<td>{$flight['date']}</td>";
-                    echo "<td>{$flight['make']}</td>";
-                    echo "<td>{$flight['model']}</td>";
-                    echo "<td>{$flight['first_name']} {$flight['last_name']}</td>";
-                    echo "<td><a href="."> More </a> </td>";
-                    echo "</tr>";
-                }
-            } else {
-                echo "<tr><td colspan='8'>No flights found.</td></tr>";
-            }
-
-            echo "</table>";
-        } else {
-            echo "No data available.";
-        }
-?>
-    </section> -->
-    <section class="container mt-5 bg-light">
+   
+   <!-- table section starts -->
+   <section class="container mt-5" >
     <?php
+    
     session_start();
     if (isset($_SESSION['flights'])) {
         $flights = $_SESSION['flights'];
 
         // Output the table
-        echo "<table border='1'>
+        echo "<table >
                 <thead>
-                    <tr>
+                    <tr style='text-align: center; background: white; color:black;'>
                         <th>Flight ID</th>
                         <th>Flight Number</th>
                         <th>Aircraft Make</th>
@@ -134,21 +89,23 @@
                         <th>Flight Origin</th>
                         <th>Flight Destination</th>
                         <th>Crew Members</th>
+                        <th style='width:80px;'> Details</th>
                     </tr>
                 </thead>
                 <tbody>";
 
         if ($flights) {
             foreach ($flights as $flight) {
-                echo "<tr>
-                        <td>{$flight['flight_id']}</td>
-                        <td>{$flight['flight_num']}</td>
-                        <td>{$flight['aircraft_make']}</td>
-                        <td>{$flight['aircraft_model']}</td>
-                        <td>{$flight['flight_date']}</td>
-                        <td>{$flight['flight_origin']}</td>
-                        <td>{$flight['flight_destination']}</td>
+                echo "<tr style='background: black; color:white;'>
+                        <td style='text-align: center;'>{$flight['flight_id']}</td>
+                        <td style='text-align: center;'>{$flight['flight_num']}</td>
+                        <td style='text-align: center;'>{$flight['aircraft_make']}</td>
+                        <td style='text-align: center;'>{$flight['aircraft_model']}</td>
+                        <td style='text-align: center;width:120px;'>{$flight['flight_date']}</td>
+                        <td style='width:150px;'>{$flight['flight_origin']}</td>
+                        <td style='width:150px;'>{$flight['flight_destination']}</td>
                         <td>{$flight['crew_members']}</td>
+                        <td style='text-align: center;'><a href="."> More </a> </td>
                     </tr>";
             }
         } else {
@@ -161,6 +118,7 @@
     }
     ?>
 </section>
+ <!-- table section ends -->
 
     
 

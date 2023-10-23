@@ -119,3 +119,10 @@
     cursor: pointer;
   }
 /* login css ends*/
+
+
+.flightsTable{
+    text-align: center;
+    background-color: red;
+    border-collapse: collapse;
+}
