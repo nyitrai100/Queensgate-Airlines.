@@ -105,7 +105,8 @@
                         <td style='width:150px;'>{$flight['flight_origin']}</td>
                         <td style='width:150px;'>{$flight['flight_destination']}</td>
                         <td>{$flight['crew_members']}</td>
-                        <td style='text-align: center;'><a href="."> More </a> </td>
+                        <td style='text-align: center;'><a href='flightDetails.php?flight_num={$flight["flight_num"]}'> More </a> </td>
+
                     </tr>";
             }
         } else {
