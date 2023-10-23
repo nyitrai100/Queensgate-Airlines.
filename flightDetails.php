@@ -27,14 +27,17 @@ $conn=NULL;
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
 </head>
 <body>
-<p><a href="browser.php"><<< Back to list</a></p>
+<p><a href="browser.php"><<< Back to Browser</a></p>
+<section class="container bg-light">
 <?php
 
 
 if($flight){
-	echo "<p> Flight Number: {$flight['flight_num']}</p>";
-	echo "<p> Flight oOrigin: {$flight['origin']}</p>";
-	echo "<p> Flight Destination: {$flight['destination']}</p>";
+	echo "<section style='display:flex; width: 99vw; flex-direction: column; align-items:center; border: 1px solid black;'>
+	 <p> Flight Number: {$flight['flight_num']}</p>
+	<p> Flight Origin: {$flight['origin']}</p>
+	<p> Flight Destination: {$flight['destination']}</p>
+	</section>";
 }
 else
 {
@@ -42,5 +45,6 @@ else
 }
 
 ?>
+</section>
 </body>
 </html>
