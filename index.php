@@ -1,5 +1,11 @@
 <?php 
   session_start();
+  if(!isset($_SESSION["user"]))
+{
+	//user tried to access the page without logging in
+        //redirect them to the login page
+	// header( "Location: ./index.php" );
+};
 ?>
 
 <!DOCTYPE html>
@@ -16,6 +22,8 @@
     <title>Queensgate Airlines</title>
 </head>
 <body>
+<?php echo "<p>You are logged in as : {$_SESSION['user']}</p>"; ?>
+<li><a href="logout.php"><button>Log out</button></a></li>
           <!-- navigation bar starts -->
           <nav class="nav-container mb-5">
             <ul class="nav justify-content-end">
@@ -30,6 +38,7 @@
                 </li>
                 <li class="nav-item">
                 <a class="nav-link" href="#" onclick="openLogin()">Login</a>
+                
                 </li>
             </ul>
         </nav>
@@ -71,15 +80,15 @@
     <div class="row">
       <div class="col-md-6"> 
         <div class="card"> 
-          <form action="includes/login-inc.php" method="post" class="box">
+          <form action="login_process.php" method="post" class="box">
             <div class="d-flex justify-content-between align-items-center">
               <span class="close-btn text-white p-2 cursor-pointer" onclick="closeLogin()">&times;</span>
             </div>
             <h1>Login</h1>
-            <p class="text-muted"> Please enter your login and password!</p> 
-            <input type="text" name="uid" placeholder="Username">
-            <input type="password" name="pwd" placeholder="Password">
-            <input type="submit" name="submit" value="Login"> 
+            <p class="text-muted"> Please enter your login and password!</p>                    
+            <input type="text" name="email" placeholder="Username">
+            <input type="password" name="password" placeholder="Password">
+             <input type="submit" name="submit" value="Login">
           </form> 
         </div> 
       </div>
