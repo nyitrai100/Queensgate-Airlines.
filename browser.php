@@ -1,3 +1,8 @@
+<?php 
+ session_start();
+ include("./classes/dbh.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,22 +18,32 @@
 </head>
 <body class="bg-dark">
   <!-- navigation bar starts -->
+  <!-- navigation bar starts -->
   <nav class="nav-container mb-5">
             <ul class="nav justify-content-end">
                 <li class="nav-item">
                 <a class="nav-link" href="./index.php">Home</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="./browser.php">Browser</a>
+                <?php if(isset($_SESSION["user"]))
+                {echo "<a class='nav-link' href='./browser.php'>Browser</a>"; } ?>
+                
                 </li>
                 <li class="nav-item">
                 <a class="nav-link" href="#">Contact</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="#" onclick="openLogin()">Login</a>
+                <?php if(isset($_SESSION["user"]))
+                {echo "<a class='nav-link' href='logout.php'>Log out</a>"; }
+                       else{echo " <a class='nav-link' href='#' onclick='openLogin()'>Login</a>"; }       ?>           
                 </li>
+                <!-- <li class="nav-item">
+                <a class="nav-link" href="#" onclick="openLogin()">Login</a>
+                
+                </li> -->
             </ul>
         </nav>
+     <!-- navigation bar ends -->
      <!-- navigation bar ends -->
 
      <!-- hero container starts -->
@@ -65,8 +80,8 @@
    <!-- table section starts -->
    <section class="container mt-5" >
     <?php
-    
     session_start();
+   
     if (isset($_SESSION['flights'])) {
         $flights = $_SESSION['flights'];
 

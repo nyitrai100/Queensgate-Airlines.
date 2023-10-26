@@ -8,6 +8,7 @@
 };
 ?>
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,8 +23,6 @@
     <title>Queensgate Airlines</title>
 </head>
 <body>
-<?php echo "<p>You are logged in as : {$_SESSION['user']}</p>"; ?>
-<li><a href="logout.php"><button>Log out</button></a></li>
           <!-- navigation bar starts -->
           <nav class="nav-container mb-5">
             <ul class="nav justify-content-end">
@@ -31,15 +30,22 @@
                 <a class="nav-link" href="#">Home</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="./browser.php">Browser</a>
+                <?php if(isset($_SESSION["user"]))
+                {echo "<a class='nav-link' href='./browser.php'>Browser</a>"; } ?>
+                
                 </li>
                 <li class="nav-item">
                 <a class="nav-link" href="#">Contact</a>
                 </li>
                 <li class="nav-item">
+                <?php if(isset($_SESSION["user"]))
+                {echo "<a class='nav-link' href='logout.php'>Log out</a>"; }
+                       else{echo " <a class='nav-link' href='#' onclick='openLogin()'>Login</a>"; }       ?>           
+                </li>
+                <!-- <li class="nav-item">
                 <a class="nav-link" href="#" onclick="openLogin()">Login</a>
                 
-                </li>
+                </li> -->
             </ul>
         </nav>
      <!-- navigation bar ends -->
@@ -49,6 +55,8 @@
     <div class="bg-img py-lg-14 py-12 bg-cover padding-hero">
       <!-- title starts -->
       <h1 class=" display-4 fw-bold  mb-5 flex text-center text-white"> Queens<span class="blue-color">Gate</span> Airlines </h1>
+       <?php echo "<p class=' fw-bold mb-5 flex text-center text-white'>Welcome {$_SESSION['user']}</p>"; ?>
+
        <!-- title ends -->
     <!-- container -->
     <div class="container pt-5 mt-5">
