@@ -47,7 +47,7 @@
         <div class="col-md-12">
             <form method="GET" action=""> 
                 <div class="input-group mb-3">
-                    <input type="text" name="query" class="form-control input-text"  placeholder="Search your flight....">
+                    <input type="text" name="search" value=" <?php if(isset($_GET['search'])){echo $_GET['search'];}?>" class="form-control input-text"  placeholder="Search your flight....">
                     <div class="input-group-append">
                         <button class="btn  btn-sm" type="submit">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
@@ -86,7 +86,7 @@
                     </tr>
                 </thead>
                 <tbody>";
-
+        
         if ($flights) {
             foreach ($flights as $flight) {
                 echo "<tr style='background: black; color:white;'>
