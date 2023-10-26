@@ -38,13 +38,6 @@
       <h6 class=" display-4 fw-bold  flex text-center text-white"> Browser Page </h6>
        <!-- title ends -->
     <!-- container -->
-    <!-- <div class="container pt-5 mt-5"> 
-        <div class="offset-lg-1 col-lg-7 col-12 text-center">
-            <div class="position-relative ">
-                <img src="https://images.unsplash.com/photo-1610642372651-fe6e7bc209ef?auto=format&fit=crop&q=80&w=2940&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="img-fluid hero-picture">
-            </div>
-            </div>
-        </div> -->
     </div>
  <!-- hero container ends -->
 
@@ -109,6 +102,7 @@
 
                     </tr>";
             }
+            
         } else {
             echo "<tr><td colspan='8'>No flights found.</td></tr>";
         }
