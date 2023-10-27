@@ -18,7 +18,7 @@
             </div>
 
             <div class="control-from">
-                <label for="lastname">Last Name *</label>
+                <label for="lastname">Last Name</label>
                 <input type="text" id="lastname" value="" required>
             </div>
 
