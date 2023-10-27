@@ -1,12 +1,13 @@
+
+.nav-link{
+    color: white;
+}
 .nav-container{
     position: relative;
     top: 90px;
     margin-top: -88px;
     z-index: 2;
     background-color: transparent;
-}
-.nav-link{
-    color: white;
 }
 .firstParagraph{
     margin-top: -60px;
@@ -16,9 +17,10 @@
 }
 .bg-img{
     background-image: url("https://images.unsplash.com/photo-1609408341205-861253559a83?auto=format&fit=crop&q=80&w=3174&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") ;
-    background-size: cover;
-    width:100%;
+    background-size: cover; 
+     width:100%;
 }
+
 .blue-color{
     color: rgb(36, 94, 165);
 }
@@ -81,19 +83,19 @@
     outline: none;
     color: white;
     border-radius: 24px;
-    transition: 0.25s
+    transition: 0.25s;
 }
 
 .box h1 {
     color: white;
     text-transform: uppercase;
-    font-weight: 500
+    font-weight: 500;
 }
 
 .box input[type="text"]:focus,
 .box input[type="password"]:focus {
     width: 300px;
-    border-color: #2ecc71
+    border-color: #2ecc71;
 }
 
 .box input[type="submit"] {
@@ -108,11 +110,11 @@
     color: white;
     border-radius: 24px;
     transition: 0.25s;
-    cursor: pointer
+    cursor: pointer;
 }
 
 .box input[type="submit"]:hover {
-    background: #2ecc71
+    background: #2ecc71;
 }
 
 .cursor-pointer {
@@ -126,107 +128,3 @@
     background-color: red;
     border-collapse: collapse;
 }
-
-/* uploading form start */
-html,
-body {
-    margin: 0;
-    padding: 0;
-}
-
-
-body {
-    width: 100vw;
-    height: 100vh;
-    font-family: 'Open sans';
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: black;
-}
-
-body>* {
-    margin: 0;
-    padding: 0;
-    box-sizing: inherit;
-}
-
-.wrapper {
-    width: 700px;
-    background: #FFF;
-    border-radius: 10px;
-    box-shadow: 0 25px 70px rgba(0, 0, 0, .05);
-    overflow: hidden;
-}
-
-h1.title {
-    padding: 15px 0;
-    margin-left: 25px;
-    font-weight: normal;
-    color: rgb(36, 94, 165);
-}
-
-.form {
-    width: 700px;
-}
-
-.myform {
-    background: #F4F5F7;
-    padding: 25px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 25px
-}
-
-.myform label {
-    display: block;
-    color: #A8AAC5;
-    font-weight: bold;
-    font-size: .8rem;
-    margin-bottom: 10px;
-}
-
-.myform input {
-    border: 0;
-    outline: 0;
-    height: 50px;
-    background: #FFF;
-    width: 100%;
-    border-radius: 5px;
-    color: rgb(36, 94, 165);
-    font-weight: 700;
-    font-size: .9rem;
-    text-indent: 15px;
-    border: 2px solid transparent;
-    transition: border 250ms;
-}
-
-.full-width {
-    grid-column: -1 / 1
-}
-
-.button {
-    grid-column: -1 / 1;
-    display: flex;
-    justify-content: center;
-}
-
-.button button {
-    border: 0;
-    outline: 0;
-    width: 120px;
-    height: 50px;
-    border-radius: 50px;
-    color: #FFF;
-    font-weight: bold;
-    font-size: .9rem;
-    cursor: pointer;
-    background: linear-gradient(356deg, rgb(36, 94, 165) 0%, rgb(36, 94, 165) 100%);
-}
-
-.button button:hover {
-    background: rgba(57, 50, 173, 1);
-}
-/* uploading form ends */

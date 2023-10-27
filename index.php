@@ -6,6 +6,9 @@
         //redirect them to the login page
 	// header( "Location: ./index.php" );
 };
+include("./style.css");
+include("/classes/dbh.php");
+
 ?>
 
 
@@ -18,7 +21,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- bootstrap links ends -->
     <!-- stylesheets start -->
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href='./style.css'>
     <!-- stylesheets ends -->
     <title>Queensgate Airlines</title>
 </head>
@@ -51,8 +54,7 @@
      <!-- navigation bar ends -->
 
 
-
-    <div class="bg-img py-lg-14 py-12 bg-cover padding-hero">
+    <div class="bg-img py-lg-14 py-12 bg-cover padding-hero ">
       <!-- title starts -->
       <h1 class=" display-4 fw-bold  mb-5 flex text-center text-white"> Queens<span class="blue-color">Gate</span> Airlines </h1>
        <?php echo "<p class=' fw-bold mb-5 flex text-center text-white'>Welcome {$_SESSION['user']}</p>"; ?>

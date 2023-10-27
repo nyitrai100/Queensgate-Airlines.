@@ -1,6 +1,7 @@
 <?php 
  session_start();
  include("./classes/dbh.php");
+ include("./style.css");
 ?>
 
 <!DOCTYPE html>
