@@ -1,26 +1,3 @@
-<?php
-session_start();
-try{
-    $conn = new PDO('mysql:host=localhost;port=3307;dbname=queensgate-airlines', 'root', '');
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-}
-catch (PDOException $exception)
-{
-	echo "Oh no, there was a problem" . $exception->getMessage();
-}
-//the id from the query string e.g. details.php?id=4
-// $flightId=$_GET['flight_numbers.flight_num'];
-$flightNum = $_GET['flight_num'] ?? null;
-
-//prepared statement uses the id to select a single country
-$stmt = $conn->prepare("SELECT * FROM flight_numbers WHERE flight_num = :flight_num");
-$stmt->bindValue(':flight_num', $flightNum);
-$stmt->execute();
-$flight=$stmt->fetch();
-$conn=NULL;
-?>
-
-
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -30,22 +7,59 @@ $conn=NULL;
 <body>
 <p><a href="browser.php"><<< Back to Browser</a></p>
 <section class="container bg-light">
+
+
+
 <?php
-
-
-if($flight){
-	echo "<section style='display:flex; width: 99vw; flex-direction: column; align-items:center; border: 1px solid black;'>
-	 <p> Flight Number: {$flight['flight_num']}</p>
-	<p> Flight Origin: {$flight['origin']}</p>
-	<p> Flight Destination: {$flight['destination']}</p>
-	</section>";
+session_start();
+$flightNum = $_GET['flight_num'] ?? null;
+if (isset($_SESSION['flights'])) {
+    $flight = null;
+    foreach ($_SESSION['flights'] as $storedFlight) {
+        if ($storedFlight['flight_num'] == $flightNum) {
+            $flight = $storedFlight;
+            break;
+        }
+    }
+    if ($flight) {
+        echo "
+			<section style='display:flex; width: 100vw; flex-direction: column; align-items:center; justify-content:center; height:100vh; '>
+			<table style='width: 70vw; border: 1px solid black;'>
+                <thead>
+                    <tr style='text-align: center; background: white; color:black;'>
+                        <th>Flight ID</th>
+                        <th>Flight Number</th>
+                        <th>Flight Origin</th>
+                        <th>Flight Destination</th>
+                        <th>Aircraft Make</th>
+                        <th>Aircraft Model</th>
+                        <th>Flight Date</th>
+                        <th>Crew Members</th>
+                    </tr>
+                </thead>
+                <tbody>
+				<tr  style='background: black; color:white;'>
+				<td style='text-align: center;'>{$flight['flight_id']}</td>
+				<td style='text-align: center;'>{$flight['flight_num']}</td>
+				<td style='text-align: center;'>{$flight['flight_origin']}</td>
+				<td style='text-align: center;'>{$flight['flight_destination']}</td>
+				<td style='text-align: center;'>{$flight['aircraft_make']}</td>
+				<td style='text-align: center;'>{$flight['aircraft_model']}</td>
+				<td style='text-align: center;'>{$flight['flight_date']}</td>
+				<td style='text-align: center;'>{$flight['crew_members']}</td>
+				</tr>
+            </section>";
+    } else {
+        echo "<p>Can't find any records.</p>";
+    }
+} else {
+    echo "<p>Session data not found. Please go back and try again.</p>";
 }
-else
-{
-	echo "<p>Can't find any records.</p>";
-}
-
 ?>
+
 </section>
 </body>
 </html>
+
+
+

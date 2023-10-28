@@ -1,6 +1,23 @@
 <?php 
  session_start();
  include("./classes/dbh.php");
+
+if (isset($_GET['search_origin']) && isset($_GET['search_dest']) && isset($_GET['search_num'])&& isset($_GET['search_date'])){
+    $searchTermOrigin = $_GET['search_origin'];
+    $searchTermDest = $_GET['search_dest'];
+    $searchTermNum = $_GET['search_num'];
+    $searchTermDate = $_GET['search_date'];
+    $filteredFlights = array_filter($_SESSION['flights'],function ($flight) use ($searchTermOrigin, $searchTermDest, $searchTermNum, $searchTermDate){
+       return 
+        stripos($flight['flight_origin'], $searchTermOrigin) !== false &&
+        stripos($flight['flight_destination'], $searchTermDest) !== false &&
+        stripos($flight['flight_num'], $searchTermNum) !== false &&
+        stripos($flight['flight_date'], $searchTermDate) !== false;
+ });
+     $flights = $filteredFlights;
+} else {
+    $flights = $_SESSION['flights'];
+}
 ?>
 
 <!DOCTYPE html>
@@ -17,7 +34,7 @@
     <title>Queensgate Airlines</title>
 </head>
 <body class="bg-dark">
-  <!-- navigation bar starts -->
+
   <!-- navigation bar starts -->
   <nav class="nav-container mb-5">
             <ul class="nav justify-content-end">
@@ -44,7 +61,6 @@
             </ul>
         </nav>
      <!-- navigation bar ends -->
-     <!-- navigation bar ends -->
 
      <!-- hero container starts -->
      <div class="bg-img py-lg-14 py-12 bg-cover padding-hero mb-5 vh-100">
@@ -58,78 +74,70 @@
 
 <!-- search starts -->
 <div class="container justify-content-center">
-    <div class="row">
-        <div class="col-md-12">
-            <form method="GET" action=""> 
-                <div class="input-group mb-3">
-                    <input type="text" name="search" value=" <?php if(isset($_GET['search'])){echo $_GET['search'];}?>" class="form-control input-text"  placeholder="Search your flight....">
-                    <div class="input-group-append">
-                        <button class="btn  btn-sm" type="submit">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
-                                <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                            </svg>
-                        </button>
+        <div class="row">
+            <div class="col-md-12">
+                <form method="GET" action="browser.php">
+                    <div class="input-group mb-3">
+                        <input type="text" name="search_origin" value="<?php echo isset($_GET['search_origin']) ? $_GET['search_origin'] : ''; ?>" class="form-control input-text" placeholder="Search departures....">
+                        <div class="input-group-append">
+                            <button class="btn btn-sm" type="submit">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+                                    <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                </svg>
+                            </button>
+                            <div class="input-group-append">
+                            <button class="btn btn-sm" type="reset">
+                                Reset
+                            </button>
+                        </div>
+                        </div>
+                    <div class="input-group mb-3">
+                        <input type="text" name="search_dest" value="<?php echo isset($_GET['search_dest']) ? $_GET['search_dest'] : ''; ?>" class="form-control input-text" placeholder="Search your destination....">
+                    <div class="input-group mb-3">
+                        <input type="text" name="search_num" value="<?php echo isset($_GET['search_num']) ? $_GET['search_num'] : ''; ?>" class="form-control input-text" placeholder="Search Flight Number....">
+                    <div class="input-group mb-3">
+                        <input type="date" name="search_date" value="<?php echo isset($_GET['search_date']) ? $_GET['search_date'] : ''; ?>" class="form-control input-text" placeholder="00/00/0000">
                     </div>
-                </div>
-            </form>
+                </form>
+            </div>
         </div>
     </div>
-</div>
 <!-- search ends -->
    
    <!-- table section starts -->
    <section class="container mt-5" >
-    <?php
-    session_start();
-   
-    if (isset($_SESSION['flights'])) {
-        $flights = $_SESSION['flights'];
-
-        // Output the table
-        echo "<table >
-                <thead>
-                    <tr style='text-align: center; background: white; color:black;'>
-                        <th>Flight ID</th>
-                        <th>Flight Number</th>
-                        <th>Aircraft Make</th>
-                        <th>Aircraft Model</th>
-                        <th>Flight Date</th>
-                        <th>Flight Origin</th>
-                        <th>Flight Destination</th>
-                        <th>Crew Members</th>
-                        <th style='width:80px;'> Details</th>
-                    </tr>
-                </thead>
-                <tbody>";
+   <?php
+        if (!empty($flights)) {
+            // Output the table
+            echo "<table style='width: 100%;'>
+                    <thead>
+                        <tr style='text-align: center; background: white; color:black;'>
+                            <th>Flight Date</th>
+                            <th>Flight Number</th>
+                            <th>Flight Origin</th>
+                            <th>Flight Destination</th>
+                            <th>Details</th>
+                        </tr>
+                    </thead>
+                    <tbody>";
+                    foreach ($flights as $flight) {
+                        echo "<tr style='background: black; color:white;'>
+                                <td style='text-align: center;'>{$flight['flight_date']}</td>
+                                <td style='text-align: center;'>{$flight['flight_num']}</td>
+                                <td style='text-align: center;'>{$flight['flight_origin']}</td>
+                                <td style='text-align: center;'>{$flight['flight_destination']}</td>
+                                <td style='text-align: center;'><a href='flightDetails.php?flight_num={$flight["flight_num"]}'> More </a> </td>
+                            </tr>";
+                    }
         
-        if ($flights) {
-            foreach ($flights as $flight) {
-                echo "<tr style='background: black; color:white;'>
-                        <td style='text-align: center;'>{$flight['flight_id']}</td>
-                        <td style='text-align: center;'>{$flight['flight_num']}</td>
-                        <td style='text-align: center;'>{$flight['aircraft_make']}</td>
-                        <td style='text-align: center;'>{$flight['aircraft_model']}</td>
-                        <td style='text-align: center;width:120px;'>{$flight['flight_date']}</td>
-                        <td style='width:150px;'>{$flight['flight_origin']}</td>
-                        <td style='width:150px;'>{$flight['flight_destination']}</td>
-                        <td>{$flight['crew_members']}</td>
-                        <td style='text-align: center;'><a href='flightDetails.php?flight_num={$flight["flight_num"]}'> More </a> </td>
+                    echo "</tbody></table>";
+                } else {
+                    echo "<p>No matching flights found.</p>";
+                }
+                ?>
 
-                    </tr>";
-            }
-            
-        } else {
-            echo "<tr><td colspan='8'>No flights found.</td></tr>";
-        }
-
-        echo "</tbody></table>";
-    } else {
-        echo "No data available.";
-    }
-    ?>
 </section>
  <!-- table section ends -->
-
     
 
 <!-- bootstrap links starts -->
@@ -137,6 +145,7 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <!-- bootstrap links ends -->
+
 </body>
 </html>
 
