@@ -11,7 +11,7 @@ try {
 if (isset($_POST['email'])) {
     $email = $_POST['email'];
     $password = $_POST['password'];
-
+    $admin = ("SELECT * FROM users");
 
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
@@ -23,6 +23,7 @@ if (isset($_POST['email'])) {
 
         if (password_verify($password, $row['password'])) {
             $_SESSION["user"] = $email;
+            $_SESSION["admin"] = ($row['role'] == 2);
             header("Location: index.php");
             exit();
         }

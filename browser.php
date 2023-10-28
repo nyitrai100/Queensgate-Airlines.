@@ -106,7 +106,8 @@ if (isset($_GET['search_origin']) && isset($_GET['search_dest']) && isset($_GET[
    <!-- table section starts -->
    <section class="container mt-5" >
     <!-- Add a flight starts -->
-    <button  onclick='openFrom()'> Add a flight</button>
+    <?php  if(isset($_SESSION["user"]) && $_SESSION["admin"])
+                {echo " <button  onclick='openFrom()'> Add a flight</button>";} ?>
     <!-- Add a flight ends -->
    <?php
         if (!empty($flights)) {
