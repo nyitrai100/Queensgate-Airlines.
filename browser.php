@@ -148,27 +148,27 @@ if (isset($_GET['search_origin']) && isset($_GET['search_dest']) && isset($_GET[
         <form action="flightDetails.php" class="myform" method="post">
             <div class="control-from">
                 <label for="flightNumber">Flight Number</label>
-                <input type="text" id="flightNumber" value="" required>
+                <input type="text" id="flightNumber" name="flightNumber" value="" required>
             </div>
             <div class="control-from">
                 <label for="aircraftMadeBy">Aircraft Made by</label>
-                <input type="text" id="aircraftMadeBy" value="" required>
+                <input type="text" id="aircraftMadeBy" name="aircraftMadeBy" value="" required>
             </div>
             <div class="control-from">
                 <label for="aircraftModel">Aircraft Model</label>
-                <input type="text" id="aircraftModel" value="" required>
+                <input type="text" id="aircraftModel" name="aircraftModel" value="" required>
             </div>
             <div class="control-from">
                 <label for="flightDate">Flight Date</label>
-                <input type="phone" id="flightDate" value="" required>
+                <input type="phone" id="flightDate" name="flightDate" value="" required>
             </div>
             <div class="control-from">
                 <label for="flightOrigin">Flight Origin</label>
-                <input type="text" id="flightOrigin" value="" required>
+                <input type="text" id="flightOrigin" name="flightOrigin" value="" required>
             </div>
             <div class="control-from">
                 <label for="flightDestination">Flight Destination</label>
-                <input type="text" id="flightDestination" value="" required>
+                <input type="text" id="flightDestination" name="flightDestination" value="" required>
             </div>
             <div class="full-width">
                 <label for="crewNumbers">Crew Number</label>
@@ -195,19 +195,64 @@ if (isset($_GET['search_origin']) && isset($_GET['search_dest']) && isset($_GET[
     var crewNumbers = document.getElementById("crewNumbers").value;
     var crewMembersContainer = document.getElementById("crewMembersContainer");
     crewMembersContainer.innerHTML = ""; // Clear previous inputs
+    
+    // for (var i = 0; i < crewNumbers; i++) {
+    //     var label = document.createElement("label");
+    //     label.textContent = (i + 1) + " Crew " + "First Name ";
+    //     var input = document.createElement("input");
+    //     input.type = "text";
+    //     input.id = "firstName" + (i + 1);
+    //     input.name = "secondName" + (i + 1);
+    //     input.required = true;
+    //     crewMembersContainer.appendChild(label);
+    //     crewMembersContainer.appendChild(input);
 
+    //     var label = document.createElement("label");
+    //     label.textContent = (i + 1) + " Crew " + "Last Name ";
+    //     var input = document.createElement("input");
+    //     input.type = "text";
+    //     input.id = "lastName" + (i + 1);
+    //     input.name = "lastName" + (i + 1);
+    //     input.required = true;
+    //     crewMembersContainer.appendChild(label);
+    //     crewMembersContainer.appendChild(input);
+    // }
     for (var i = 0; i < crewNumbers; i++) {
-        var label = document.createElement("label");
-        label.textContent = "Crew member " + (i + 1);
-        var input = document.createElement("input");
-        input.type = "text";
-        input.id = "crewMember" + (i + 1);
-        input.name = "crewMember" + (i + 1);
-        input.required = true;
-        crewMembersContainer.appendChild(label);
-        crewMembersContainer.appendChild(input);
-    }
+    var crewDiv = document.createElement("div");
+    crewDiv.id = "crewdiv" + (i + 1);
+
+    // First Name
+    var firstNameLabel = document.createElement("label");
+    firstNameLabel.textContent = (i + 1) + " Crew " + "First Name ";
+    var firstNameInput = document.createElement("input");
+    firstNameInput.type = "text";
+    firstNameInput.id = "firstName" + (i + 1);
+    firstNameInput.name = "firstName" + (i + 1);
+    firstNameInput.required = true;
+
+    // Append first name elements to crewDiv
+    crewDiv.appendChild(firstNameLabel);
+    crewDiv.appendChild(firstNameInput);
+
+    // Last Name
+    var lastNameLabel = document.createElement("label");
+    lastNameLabel.textContent = (i + 1) + " Last Name ";
+    var lastNameInput = document.createElement("input");
+    lastNameInput.type = "text";
+    lastNameInput.id = "lastName" + (i + 1);
+    lastNameInput.name = "lastName" + (i + 1);
+    lastNameInput.required = true;
+
+    // Append last name elements to crewDiv
+    crewDiv.appendChild(lastNameLabel);
+    crewDiv.appendChild(lastNameInput);
+
+    // Append crewDiv to crewMembersContainer
+    crewMembersContainer.appendChild(crewDiv);
 }
+
+}
+
 </script>
 
 <!-- form ends -->

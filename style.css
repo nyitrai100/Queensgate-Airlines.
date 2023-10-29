@@ -226,4 +226,19 @@ h1.title {
 #upload-display{
     display: none;
 }
+
+#firstName1,#firstName2,#firstName3,#firstName4{
+    width:15vw;
+    display: inline;
+}
+#lastName1,#lastName2,#lastName3,#lastName4{
+    width:15vw;
+    display: inline;
+}
+#crewdiv1, #crewdiv2, #crewdiv3, #crewdiv4{
+    display: flex;
+    flex-direction: row;
+    margin-top:10px;
+
+}
 /* uploading form ends */ 
