@@ -60,6 +60,8 @@ try {
         $conn->exec($sqlCrewFlight);
     }
 
+
+
     // Commit the transaction
     $conn->commit();
     echo "<script>alert('Data inserted successfully.'); window.location.href = './browser.php';</script>";

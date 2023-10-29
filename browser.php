@@ -204,29 +204,7 @@ if (isset($_GET['search_origin']) && isset($_GET['search_dest']) && isset($_GET[
     function updateCrewMembers() {
     var crewNumbers = document.getElementById("crewNumbers").value;
     var crewMembersContainer = document.getElementById("crewMembersContainer");
-    crewMembersContainer.innerHTML = ""; // Clear previous inputs
-    
-    // for (var i = 0; i < crewNumbers; i++) {
-    //     var label = document.createElement("label");
-    //     label.textContent = (i + 1) + " Crew " + "First Name ";
-    //     var input = document.createElement("input");
-    //     input.type = "text";
-    //     input.id = "firstName" + (i + 1);
-    //     input.name = "secondName" + (i + 1);
-    //     input.required = true;
-    //     crewMembersContainer.appendChild(label);
-    //     crewMembersContainer.appendChild(input);
-
-    //     var label = document.createElement("label");
-    //     label.textContent = (i + 1) + " Crew " + "Last Name ";
-    //     var input = document.createElement("input");
-    //     input.type = "text";
-    //     input.id = "lastName" + (i + 1);
-    //     input.name = "lastName" + (i + 1);
-    //     input.required = true;
-    //     crewMembersContainer.appendChild(label);
-    //     crewMembersContainer.appendChild(input);
-    // }
+    crewMembersContainer.innerHTML = ""; 
     for (var i = 0; i < crewNumbers; i++) {
     var crewDiv = document.createElement("div");
     crewDiv.id = "crewdiv" + (i + 1);
