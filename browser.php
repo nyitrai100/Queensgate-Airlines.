@@ -131,8 +131,16 @@ if (isset($_GET['search_origin']) && isset($_GET['search_dest']) && isset($_GET[
                                 <td style='text-align: center;'>{$flight['flight_num']}</td>
                                 <td style='text-align: center;'>{$flight['flight_origin']}</td>
                                 <td style='text-align: center;'>{$flight['flight_destination']}</td>
-                                <td style='text-align: center;'><a href='flightDetails.php?flight_num={$flight["flight_num"]}'> More </a> </td>
-                            </tr>";
+                                <td style='text-align: center;'><a href='flightDetails.php?flight_num={$flight["flight_num"]}'> More </a> </td>";
+                                if (isset($_SESSION["user"]) && $_SESSION["admin"]) {
+                                    echo "<td style='text-align: center;'>
+                                            <form action='deleteFlight.php' method='post'>
+                                                <input type='hidden' name='flight_num' value='{$flight["flight_num"]}'>
+                                                <button type='submit' name='deleteFlight'>Delete</button>
+                                            </form>
+                                          </td>";
+                                }
+                                echo"</tr>";
                     }
         
                     echo "</tbody></table>";
