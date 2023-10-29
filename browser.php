@@ -119,8 +119,10 @@ if (isset($_GET['search_origin']) && isset($_GET['search_dest']) && isset($_GET[
                             <th>Flight Number</th>
                             <th>Flight Origin</th>
                             <th>Flight Destination</th>
-                            <th>Details</th>
-                        </tr>
+                            <th>Details</th>";
+                            if(isset($_SESSION["user"]) && $_SESSION["admin"])
+                            {echo " <th> Delete </th>";} 
+                        echo"</tr>
                     </thead>
                     <tbody>";
                     foreach ($flights as $flight) {
