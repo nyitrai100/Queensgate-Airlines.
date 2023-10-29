@@ -145,7 +145,7 @@ if (isset($_GET['search_origin']) && isset($_GET['search_dest']) && isset($_GET[
     </div>
     <div class="form">
         <h1 class="title">Upload a flight</h1>
-        <form action="flightDetails.php" class="myform" method="post">
+        <form action="uploadFlight.php" class="myform" method="post">
             <div class="control-from">
                 <label for="flightNumber">Flight Number</label>
                 <input type="text" id="flightNumber" name="flightNumber" value="" required>
@@ -160,7 +160,7 @@ if (isset($_GET['search_origin']) && isset($_GET['search_dest']) && isset($_GET[
             </div>
             <div class="control-from">
                 <label for="flightDate">Flight Date</label>
-                <input type="phone" id="flightDate" name="flightDate" value="" required>
+                <input type="date" id="flightDate" name="flightDate" value="" required>
             </div>
             <div class="control-from">
                 <label for="flightOrigin">Flight Origin</label>

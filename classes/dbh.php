@@ -30,7 +30,7 @@ try {
     // Storing $flights in a session variable
     $_SESSION['flights'] = $flights;
 
-    $conn = NULL; // Close the database connection
+    // $conn = NULL; // Close the database connection
     } 
     catch (PDOException $exception) {
     echo "Oh no, there was a problem" . $exception->getMessage();
