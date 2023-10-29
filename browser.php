@@ -139,56 +139,77 @@ if (isset($_GET['search_origin']) && isset($_GET['search_dest']) && isset($_GET[
                 }
                 ?>
 <!-- form starts -->   
-    <div class="wrapper" id="upload-display">
-        <div class="d-flex  align-items-start">
-              <span class="close-btn text-black p-1 cursor-pointer" onclick="closeForm()">&times;</span>
-            </div>
-        <div class="form">
-            <h1 class="title">Upload a flight</h1>
-
-            <form action="#" class="myform">
-                <div class="control-from">
-                    <label for="firstname">First Name *</label>
-                    <input type="text" id="firstname" value="" required>
-                </div>
-
-                <div class="control-from">
-                    <label for="lastname">Last Name</label>
-                    <input type="text" id="lastname" value="" required>
-                </div>
-
-                <div class="control-from">
-                    <label for="emailaddress">Email Address *</label>
-                    <input type="text" id="emailaddress" value="" required>
-                </div>
-
-                <div class="control-from">
-                    <label for="phonenumber">Phone Number</label>
-                    <input type="phone" id="phonenumber" value="" required>
-                </div>
-
-                <div class="full-width">
-                    <label for="companyname">Company Name</label>
-                    <input type="text" id="companyname" value="" required>
-                </div>
-
-                <div class="control-from">
-                    <label for="businesscategory">Business Category</label>
-                    <input type="text" id="businesscategory" value="" required>
-                </div>
-
-                <div class="control-from">
-                    <label for="location">Location </label>
-                    <input type="text" id="location" value="" required>
-                </div>
-
-                <div class="button">
-                    <button id="register">Upload</button>
-                </div>
-
-            </form>
-        </div>
+<div class="wrapper" id="upload-display">
+    <div class="d-flex align-items-start">
+        <span class="close-btn text-black p-1 cursor-pointer" onclick="closeForm()">&times;</span>
     </div>
+    <div class="form">
+        <h1 class="title">Upload a flight</h1>
+        <form action="flightDetails.php" class="myform" method="post">
+            <div class="control-from">
+                <label for="flightNumber">Flight Number</label>
+                <input type="text" id="flightNumber" value="" required>
+            </div>
+            <div class="control-from">
+                <label for="aircraftMadeBy">Aircraft Made by</label>
+                <input type="text" id="aircraftMadeBy" value="" required>
+            </div>
+            <div class="control-from">
+                <label for="aircraftModel">Aircraft Model</label>
+                <input type="text" id="aircraftModel" value="" required>
+            </div>
+            <div class="control-from">
+                <label for="flightDate">Flight Date</label>
+                <input type="phone" id="flightDate" value="" required>
+            </div>
+            <div class="control-from">
+                <label for="flightOrigin">Flight Origin</label>
+                <input type="text" id="flightOrigin" value="" required>
+            </div>
+            <div class="control-from">
+                <label for="flightDestination">Flight Destination</label>
+                <input type="text" id="flightDestination" value="" required>
+            </div>
+            <div class="full-width">
+                <label for="crewNumbers">Crew Number</label>
+                <select id="crewNumbers" name="crewNumbers" onchange="updateCrewMembers()">
+
+                    <option value="0">Unknown</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                    <option value="4">Four</option>
+                </select>
+                <div class="pt-5" id="crewMembersContainer">
+                </div>
+            </div>
+            <div class="button">
+                <button id="register">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
+<!-- create dinamically the inputs for crew members -->
+<script>
+    function updateCrewMembers() {
+    var crewNumbers = document.getElementById("crewNumbers").value;
+    var crewMembersContainer = document.getElementById("crewMembersContainer");
+    crewMembersContainer.innerHTML = ""; // Clear previous inputs
+
+    for (var i = 0; i < crewNumbers; i++) {
+        var label = document.createElement("label");
+        label.textContent = "Crew member " + (i + 1);
+        var input = document.createElement("input");
+        input.type = "text";
+        input.id = "crewMember" + (i + 1);
+        input.name = "crewMember" + (i + 1);
+        input.required = true;
+        crewMembersContainer.appendChild(label);
+        crewMembersContainer.appendChild(input);
+    }
+}
+</script>
+
 <!-- form ends -->
 
 </section>
