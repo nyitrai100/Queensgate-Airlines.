@@ -8,6 +8,7 @@ try {
   //connect the tables together and make groups.
     $flightTable = "SELECT flights.id AS flight_id,
                             flights.flight_num,
+                            flights.aircraft_id AS aircraft_id,
                             aircraft.make AS aircraft_make,
                             aircraft.model AS aircraft_model,
                             flights.date AS flight_date,
