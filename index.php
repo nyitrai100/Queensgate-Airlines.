@@ -1,13 +1,6 @@
 <?php 
   session_start();
-  if(!isset($_SESSION["user"]))
-{
-	//user tried to access the page without logging in
-        //redirect them to the login page
-	// header( "Location: ./index.php" );
-};
-include("./classes/dbh.php");
-
+  include("./classes/dbh.php");
 ?>
 
 
@@ -25,8 +18,10 @@ include("./classes/dbh.php");
     <title>Queensgate Airlines</title>
 </head>
 <body>
+<?php echo "<p class='accountEmail'>{$_SESSION['user']}</p>"; ?>
+                
           <!-- navigation bar starts -->
-          <nav class="nav-container mb-5">
+          <nav class="nav-container mb-2">
             <ul class="nav justify-content-end">
                 <li class="nav-item">
                 <a class="nav-link" href="#">Home</a>
@@ -55,8 +50,7 @@ include("./classes/dbh.php");
 
     <div class="bg-img py-lg-14 py-12 bg-cover padding-hero ">
       <!-- title starts -->
-      <h1 class=" display-4 fw-bold  mb-5 flex text-center text-white"> Queens<span class="blue-color">Gate</span> Airlines </h1>
-       <?php echo "<p class=' fw-bold mb-5 flex text-center text-white'>Welcome {$_SESSION['user']}</p>"; ?>
+      <h1 class=" display-4 fw-bold  mb-5 flex text-center text-white shadow-title"> QueensGate Airlines </h1>
 
        <!-- title ends -->
     <!-- container -->
@@ -69,7 +63,7 @@ include("./classes/dbh.php");
           <div>
             <div class="text-center text-md-start ">
                 
-              <p class="lead text-white firstParagraph "> Explore<br/> Top Flights  to Europe <br/> <span class="text-black">with</span> <br/>Our Platform<br/></p>
+              <p class="lead text-black firstParagraph "> Explore<br/> Top Flights  to Europe <br/> <span class="text-black">with</span> <br/>Our Platform<br/></p>
             </div>
             <!-- searching was here -->
           
@@ -78,7 +72,7 @@ include("./classes/dbh.php");
         </div>
         <div class="offset-lg-1 col-lg-7 col-12 text-center">
             <div class="position-relative ">
-                <img src="https://images.unsplash.com/photo-1610642372651-fe6e7bc209ef?auto=format&fit=crop&q=80&w=2940&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="img-fluid hero-picture">
+                <img src="https://images.pexels.com/photos/1004584/pexels-photo-1004584.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="img-fluid hero-picture">
             </div>
             </div>
       </div>

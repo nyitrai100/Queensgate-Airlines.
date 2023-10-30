@@ -34,9 +34,9 @@ if (isset($_GET['search_origin']) && isset($_GET['search_dest']) && isset($_GET[
     <title>Queensgate Airlines</title>
 </head>
 <body class="bg-dark">
-
-  <!-- navigation bar starts -->
-  <nav class="nav-container mb-5">
+<?php echo "<p class='accountEmail'>{$_SESSION['user']}</p>"; ?>
+          <!-- navigation bar starts -->
+          <nav class="nav-container mb-2">
             <ul class="nav justify-content-end">
                 <li class="nav-item">
                 <a class="nav-link" href="./index.php">Home</a>
@@ -63,7 +63,7 @@ if (isset($_GET['search_origin']) && isset($_GET['search_dest']) && isset($_GET[
      <!-- navigation bar ends -->
 
      <!-- hero container starts -->
-     <div class="bg-img py-lg-14 py-12 bg-cover padding-hero mb-5 vh-100">
+     <div class="bg-image-browser py-lg-14 py-12 bg-cover padding-hero mb-5 vh-100">
       <!-- title starts -->
       <!-- <h1 class=" display-4 fw-bold  mb-5 flex text-center text-white"> Queens<span class="blue-color">Gate</span> Airlines </h1> -->
       <h6 class=" display-4 fw-bold  flex text-center text-white"> Browser Page </h6>

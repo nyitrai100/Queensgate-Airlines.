@@ -1,13 +1,24 @@
-
 .nav-link{
     color: white;
 }
 .nav-container{
     position: relative;
-    top: 90px;
+    top: 65px;
     margin-top: -88px;
     z-index: 2;
     background-color: transparent;
+}
+.shadow-title{
+    text-shadow: 2px 2px black;
+
+}
+.accountEmail{
+    display: flex;
+    justify-content: flex-end;
+    width: 100vw;
+    color: white;
+    background-color: black;
+    margin-left: -15px;
 }
 .firstParagraph{
     margin-top: -60px;
@@ -16,9 +27,14 @@
     font-size: 30px;
 }
 .bg-img{
-    background-image: url("https://images.unsplash.com/photo-1609408341205-861253559a83?auto=format&fit=crop&q=80&w=3174&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") ;
+    background-image: url("https://images.pexels.com/photos/1450353/pexels-photo-1450353.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
     background-size: cover; 
      width:100%;
+}
+.bg-image-browser{
+      background-image: url("https://images.unsplash.com/photo-1609408341205-861253559a83?auto=format&fit=crop&q=80&w=3174&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") ;
+      background-size: cover; 
+      width:100%;
 }
 
 .blue-color{
@@ -34,7 +50,7 @@
     border-bottom: 2px solid white;
 }
 .hero-picture{
-    border-radius: 10%;
+    border-radius: 5%;
     border:1px solid white;
     box-shadow: black 5px 1px 2px 2px;
 }
