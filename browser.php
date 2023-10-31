@@ -4,9 +4,16 @@
 
 if (isset($_GET['search_origin']) && isset($_GET['search_dest']) && isset($_GET['search_num'])&& isset($_GET['search_date'])){
     $searchTermOrigin = $_GET['search_origin'];
-    $searchTermDest = $_GET['search_dest'];
+    if(isset($_GET['destinationCheckbox'])){
+        $searchTermDest = $_GET['search_dest'];
+    }
+   if(isset($_GET['flightNumberCheckbox'])){
     $searchTermNum = $_GET['search_num'];
+   }
+   if(isset($_GET['dateCheckbox'])){
     $searchTermDate = $_GET['search_date'];
+   }
+
     $filteredFlights = array_filter($_SESSION['flights'],function ($flight) use ($searchTermOrigin, $searchTermDest, $searchTermNum, $searchTermDate){
        return 
         stripos($flight['flight_origin'], $searchTermOrigin) !== false &&
@@ -28,12 +35,13 @@ if (isset($_GET['search_origin']) && isset($_GET['search_dest']) && isset($_GET[
     <!-- bootstrap links starts -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- bootstrap links ends -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
     <!-- stylesheets start -->
     <link rel="stylesheet" href="style.css?v=<?php echo time(); ?>">
     <!-- stylesheets ends -->
     <title>Queensgate Airlines</title>
 </head>
-<body class="bg-dark">
+<body class="bg-light">
 <?php echo "<p class='accountEmail'>{$_SESSION['user']}</p>"; ?>
           <!-- navigation bar starts -->
           <nav class="nav-container mb-2">
@@ -66,41 +74,96 @@ if (isset($_GET['search_origin']) && isset($_GET['search_dest']) && isset($_GET[
      <div class="bg-image-browser py-lg-14 py-12 bg-cover padding-hero mb-5 vh-100">
       <!-- title starts -->
       <!-- <h1 class=" display-4 fw-bold  mb-5 flex text-center text-white"> Queens<span class="blue-color">Gate</span> Airlines </h1> -->
-      <h6 class=" display-4 fw-bold  flex text-center text-white"> Browser Page </h6>
+      <h6 class=" display-4 fw-bold  flex text-center text-black shadow-title2"> Browser Page </h6>
        <!-- title ends -->
+       <div class="container pt-5 mt-5">
+     
+ 
+     <!-- row -->
+     <div class="row align-items-center">
+       <div class="col-lg-3 col-12">
+         <div>
+           <div class="text-center text-md-start ">
+               
+             <p class="lead firstParagraph text-white shadow-title"> Browser<br/>
+                                                         Top Flights  to Europe <br/>  
+                                                             with <br/>
+                                                        <span class="text-white shadow-title">OueensGate<br/></span>
+           </div>
+           
+         </div>
+       </div>
+       <div class="offset-lg-3 col-lg-6 col-12 text-center">
+           <div class="position-relative ">
+           <img src="https://images.pexels.com/photos/12717154/pexels-photo-12717154.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="img-fluid hero-picture">
+           </div>
+           </div>
+     </div>
+   </div>
     <!-- container -->
     </div>
  <!-- hero container ends -->
 <!-- search starts -->
-<div class="container justify-content-center">
+<div class="container justify-content-center ">
         <div class="row">
             <div class="col-md-12">
                 <form method="GET" action="browser.php">
-                    <div class="input-group mb-3">
-                        <input type="text" name="search_origin" value="<?php echo isset($_GET['search_origin']) ? $_GET['search_origin'] : ''; ?>" class="form-control input-text" placeholder="Search departures....">
+                    <div class="input-group mb-3" >
+                                   
+                <!-- <div class="col-lg-3 col-md-3 col-sm-12 p-0">
+                                    <select class="form-control" id="exampleFormControlSelect1">
+                                        <option>Departures</option>
+                                        <option>Destination</option>
+                                        <option>Flight Number</option>
+                                        <option>All</option>
+                                        <option>Date</option>
+                                    </select>
+                                </div> -->
+
+                        <input type="text" name="search_origin" value="<?php echo isset($_GET['search_origin']) ? $_GET['search_origin'] : ''; ?>" class="form-control input-text borderSearch" id="displayDepartures" placeholder="Search departures....">
                         <div class="input-group-append">
-                            <button class="btn btn-sm" type="submit">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+                            <button class="btn btn-sm iconBorder" type="submit">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search ">
                                     <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                                 </svg>
                             </button>
                             <div class="input-group-append">
-                            <button class="btn btn-sm" type="reset">
+                            <button class="btn btn-sm iconBorder" type="reset">
                                 Reset
                             </button>
                         </div>
                         </div>
+                        <div class="input-group mb-3">
+                            <div class="filter">
+                                <p>Filter:</p>    
+                            </div>
+                            <div class="checkboxes">
+                                <label class="destinationCheckbox">Destination
+                                    <input type="checkbox" name="destinationCheckbox" id="destinationCheckbox" onclick="display(), disappear()">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="flightNumberCheckbox">Flight Number
+                                    <input type="checkbox" name="flightNumberCheckbox" id="flightNumberCheckbox" onclick="display(), disappear()">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="dateCheckbox">Date
+                                    <input type="checkbox" name="dateCheckbox" id="dateCheckbox" onclick="display(), disappear()">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+
                     <div class="input-group mb-3">
-                        <input type="text" name="search_dest" value="<?php echo isset($_GET['search_dest']) ? $_GET['search_dest'] : ''; ?>" class="form-control input-text" placeholder="Search your destination....">
+                        <input type="text" name="search_dest" value="<?php echo isset($_GET['search_dest']) ? $_GET['search_dest'] : ''; ?>" class="form-control input-text" id="displayDestination" placeholder="Search your destination....">
                     <div class="input-group mb-3">
-                        <input type="text" name="search_num" value="<?php echo isset($_GET['search_num']) ? $_GET['search_num'] : ''; ?>" class="form-control input-text" placeholder="Search Flight Number....">
+                        <input type="text" name="search_num" value="<?php echo isset($_GET['search_num']) ? $_GET['search_num'] : ''; ?>" class="form-control input-text" id="displayFlight" placeholder="Search Flight Number....">
                     <div class="input-group mb-3">
-                        <input type="date" name="search_date" value="<?php echo isset($_GET['search_date']) ? $_GET['search_date'] : ''; ?>" class="form-control input-text" placeholder="00/00/0000">
+                        <input type="date" name="search_date" value="<?php echo isset($_GET['search_date']) ? $_GET['search_date'] : ''; ?>" class="form-control input-text" id="displayDate" placeholder="00/00/0000">
                     </div>
                 </form>
             </div>
         </div>
     </div>
+
 <!-- search ends -->
    
    <!-- table section starts -->
@@ -199,6 +262,7 @@ if (isset($_GET['search_origin']) && isset($_GET['search_dest']) && isset($_GET[
         </form>
     </div>
 </div>
+
 <!-- create dinamically the inputs for crew members -->
 <script>
     function updateCrewMembers() {
@@ -241,6 +305,40 @@ if (isset($_GET['search_origin']) && isset($_GET['search_dest']) && isset($_GET[
 
 }
 
+
+</script>
+<!-- create dinamic search inputs -->
+
+<script>
+    // Display the input field
+    function display() {
+        if (document.getElementById('destinationCheckbox').checked == true) {
+            document.getElementById('displayDestination').style.display = 'flex';
+        }
+        if (document.getElementById('flightNumberCheckbox').checked == true) {
+            document.getElementById('displayFlight').style.display = 'flex';
+        }
+        if (document.getElementById('dateCheckbox').checked == true) {
+            document.getElementById('displayDate').style.display = 'flex';
+        }
+
+    }
+
+    // Disappear the input field
+    function disappear() {
+        if (document.getElementById('destinationCheckbox').checked == false) {
+            document.getElementById('displayDestination').style.display = 'none';
+        }
+        if (document.getElementById('flightNumberCheckbox').checked == false) {
+            document.getElementById('displayFlight').style.display = 'none';
+        }
+        if (document.getElementById('dateCheckbox').checked == false) {
+            document.getElementById('displayDate').style.display = 'none';
+        }
+    }
+    function refreshPage() {
+        location.reload(true); // Passing true forces a reload from the server, not the cache
+    }
 </script>
 
 <!-- form ends -->

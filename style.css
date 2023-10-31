@@ -12,6 +12,11 @@
     text-shadow: 2px 2px black;
 
 }
+.shadow-title2{
+    text-shadow: 2px 2px white;
+
+}
+
 .accountEmail{
     display: flex;
     justify-content: flex-end;
@@ -32,9 +37,11 @@
      width:100%;
 }
 .bg-image-browser{
-      background-image: url("https://images.unsplash.com/photo-1609408341205-861253559a83?auto=format&fit=crop&q=80&w=3174&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") ;
-      background-size: cover; 
-      width:100%;
+      /* background-image: url("https://images.unsplash.com/photo-1609408341205-861253559a83?auto=format&fit=crop&q=80&w=3174&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") ;
+       */
+       background-image: url("https://images.unsplash.com/photo-1528824036966-36325e3140fa?auto=format&fit=crop&q=80&w=2940&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+      background-size:cover; 
+      max-width: 100%; 
 }
 
 .blue-color{
@@ -258,3 +265,34 @@ h1.title {
 
 }
 /* uploading form ends */ 
+
+
+/* search starts */
+.checkboxes{
+    width:100%;
+    display: flex;
+    justify-content: space-around;
+    border: 1px solid gray;
+    /* border-bottom: 1px solid gray;
+    border-left: 1px solid gray;
+    border-right: 1px solid gray; */
+    border-radius: 2%;
+}
+.filter{
+    width:100%;
+    display: flex;
+    justify-content: flex-start;
+    border-left: 1px solid gray;
+    border-right: 1px solid gray;
+}
+.iconBorder{
+    border: 1px solid gray;
+}
+
+.borderSearch{
+    border: 1px solid gray;
+}
+#displayDestination, #displayFlight, #displayDate{
+    display: none;
+}
+/* search ends */

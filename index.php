@@ -65,12 +65,9 @@
                 
               <p class="lead text-black firstParagraph "> Explore<br/> Top Flights  to Europe <br/> <span class="text-black">with</span> <br/>Our Platform<br/></p>
             </div>
-            <!-- searching was here -->
-          
-        
           </div>
         </div>
-        <div class="offset-lg-1 col-lg-7 col-12 text-center">
+        <div class="offset-lg-2 col-lg-6 col-12 text-center">
             <div class="position-relative ">
                 <img src="https://images.pexels.com/photos/1004584/pexels-photo-1004584.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="img-fluid hero-picture">
             </div>
