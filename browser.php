@@ -41,7 +41,7 @@ if (isset($_GET['search_origin']) && isset($_GET['search_dest']) && isset($_GET[
     <!-- stylesheets ends -->
     <title>Queensgate Airlines</title>
 </head>
-<body class="bg-light">
+<body>
 <?php echo "<p class='accountEmail'>{$_SESSION['user']}</p>"; ?>
           <!-- navigation bar starts -->
           <nav class="nav-container mb-2">
@@ -73,7 +73,6 @@ if (isset($_GET['search_origin']) && isset($_GET['search_dest']) && isset($_GET[
      <!-- hero container starts -->
      <div class="bg-image-browser py-lg-14 py-12 bg-cover padding-hero mb-5 vh-100">
       <!-- title starts -->
-      <!-- <h1 class=" display-4 fw-bold  mb-5 flex text-center text-white"> Queens<span class="blue-color">Gate</span> Airlines </h1> -->
       <h6 class=" display-4 fw-bold  flex text-center text-black shadow-title2"> Browser Page </h6>
        <!-- title ends -->
        <div class="container pt-5 mt-5">
@@ -100,26 +99,15 @@ if (isset($_GET['search_origin']) && isset($_GET['search_dest']) && isset($_GET[
            </div>
      </div>
    </div>
-    <!-- container -->
     </div>
  <!-- hero container ends -->
+ <div class="bg-color">
 <!-- search starts -->
-<div class="container justify-content-center ">
-        <div class="row">
+<div class="container justify-content-center"> 
+        <div class="row ">
             <div class="col-md-12">
                 <form method="GET" action="browser.php">
-                    <div class="input-group mb-3" >
-                                   
-                <!-- <div class="col-lg-3 col-md-3 col-sm-12 p-0">
-                                    <select class="form-control" id="exampleFormControlSelect1">
-                                        <option>Departures</option>
-                                        <option>Destination</option>
-                                        <option>Flight Number</option>
-                                        <option>All</option>
-                                        <option>Date</option>
-                                    </select>
-                                </div> -->
-
+                    <div class="input-group mb-3">
                         <input type="text" name="search_origin" value="<?php echo isset($_GET['search_origin']) ? $_GET['search_origin'] : ''; ?>" class="form-control input-text borderSearch" id="displayDepartures" placeholder="Search departures....">
                         <div class="input-group-append">
                             <button class="btn btn-sm iconBorder" type="submit">
@@ -133,7 +121,7 @@ if (isset($_GET['search_origin']) && isset($_GET['search_dest']) && isset($_GET[
                             </button>
                         </div>
                         </div>
-                        <div class="input-group mb-3">
+                        <div class="input-group">
                             <div class="filter">
                                 <p>Filter:</p>    
                             </div>
@@ -151,7 +139,6 @@ if (isset($_GET['search_origin']) && isset($_GET['search_dest']) && isset($_GET[
                                     <span class="checkmark"></span>
                                 </label>
                             </div>
-
                     <div class="input-group mb-3">
                         <input type="text" name="search_dest" value="<?php echo isset($_GET['search_dest']) ? $_GET['search_dest'] : ''; ?>" class="form-control input-text" id="displayDestination" placeholder="Search your destination....">
                     <div class="input-group mb-3">
@@ -343,9 +330,9 @@ if (isset($_GET['search_origin']) && isset($_GET['search_dest']) && isset($_GET[
 
 <!-- form ends -->
 
-</section>
+    </section>
  <!-- table section ends -->
-    
+ </div>
 
 <!-- bootstrap links starts -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

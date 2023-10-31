@@ -42,6 +42,7 @@
        background-image: url("https://images.unsplash.com/photo-1528824036966-36325e3140fa?auto=format&fit=crop&q=80&w=2940&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
       background-size:cover; 
       max-width: 100%; 
+      /* opacity: 88%; */
 }
 
 .blue-color{
@@ -273,10 +274,9 @@ h1.title {
     display: flex;
     justify-content: space-around;
     border: 1px solid gray;
-    /* border-bottom: 1px solid gray;
-    border-left: 1px solid gray;
-    border-right: 1px solid gray; */
     border-radius: 2%;
+    background-color: black;
+    color:white;
 }
 .filter{
     width:100%;
@@ -284,6 +284,9 @@ h1.title {
     justify-content: flex-start;
     border-left: 1px solid gray;
     border-right: 1px solid gray;
+    background-color: black;
+    color: white;
+    padding-left: 10px;
 }
 .iconBorder{
     border: 1px solid gray;
@@ -294,5 +297,23 @@ h1.title {
 }
 #displayDestination, #displayFlight, #displayDate{
     display: none;
+    background-color: black;
+    color: white;
 }
+#displayDestination::placeholder, #displayFlight::placeholder{
+    color:white;
+}
+/* #displayDepartures{
+    background-color: black;
+    color:white;
+}
+#displayDepartures::placeholder{
+    color:white;
+} */
 /* search ends */
+
+.bg-color{
+    background-color: white;
+    margin-top: -50px;
+    padding-top: 20px;
+}
