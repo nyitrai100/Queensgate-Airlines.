@@ -274,7 +274,7 @@ h1.title {
     width:100%;
     display: flex;
     justify-content: space-around;
-    border: 1px solid gray;
+    /* border: 1px solid gray; */
     border-radius: 2%;
     background-color: black;
     color:white;
@@ -283,9 +283,7 @@ h1.title {
     width:100%;
     display: flex;
     justify-content: flex-start;
-    border-left: 1px solid gray;
-    border-right: 1px solid gray;
-    background-color: black;
+    background: linear-gradient(to bottom,#878686, #0d0d0d );
     color: white;
     padding-left: 10px;
 }
@@ -293,12 +291,9 @@ h1.title {
     border: 1px solid gray;
 }
 
-.borderSearch{
-    border: 1px solid gray;
-}
 #displayDestination, #displayFlight, #displayDate{
     display: none;
-    background-color: black;
+    background: linear-gradient(to bottom, #0d0d0d, #878686);
     color: white;
 }
 #displayDestination::placeholder, #displayFlight::placeholder{
@@ -311,24 +306,10 @@ h1.title {
 #displayDepartures::placeholder{
     color:white;
 } */
-
-/* .search-container{
-    background-color: gray;
-    padding: 30px;
-    border: 2px solid black;
-    border-radius: 20px;
-    display: flex;
-    position: absolute;
-    top:-80px;
-    left: 12vw;
-    justify-content: center;
-    flex-direction: column;;
-    width: 800px;
-} */
 .search-container {
-    background-color: white;
+    background: linear-gradient(to bottom, #fbfafa, #0a0a0a);
     padding: 30px;
-    border: 2px solid black;
+    /* border: 2px solid black; */
     border-radius: 20px;
     display: flex;
     justify-content: center;
