@@ -160,7 +160,7 @@ if (isset($_GET['search_origin']) && isset($_GET['search_dest']) && isset($_GET[
    <section class="container mt-5" >
     <!-- Add a flight starts -->
     <?php  if(isset($_SESSION["user"]) && $_SESSION["admin"])
-                {echo " <button  onclick='openFrom()'> Add a flight</button>";} ?>
+                {echo " <button onclick='openFrom()'> Add a flight</button>";} ?>
     <!-- Add a flight ends -->
    <?php
         if (!empty($flights)) {
@@ -186,7 +186,7 @@ if (isset($_GET['search_origin']) && isset($_GET['search_dest']) && isset($_GET[
                                 <td class='flightsTableFlight4'>{$flight['flight_destination']}</td>
                                 <td class='flightsTableFlight5'><a href='flightDetails.php?flight_num={$flight["flight_num"]}'> More </a> </td>";
                                 if (isset($_SESSION["user"]) && $_SESSION["admin"]) {
-                                    echo "<td style='text-align: center;'>
+                                    echo "<td class='flightsTableFlight6'>
                                             <form action='deleteFlight.php' method='post'>
                                                 <input type='hidden' name='flight_num' value='{$flight["flight_num"]}'>
                                                 <button type='submit' name='deleteFlight'>Delete</button>
@@ -204,11 +204,11 @@ if (isset($_GET['search_origin']) && isset($_GET['search_dest']) && isset($_GET[
 <!-- form starts -->   
 <div class="wrapper" id="upload-display">
     <div class="d-flex align-items-start">
-        <span class="close-btn text-black p-1 cursor-pointer" onclick="closeForm()">&times;</span>
+        <span class="close-btn text-white p-1 cursor-pointer" onclick="closeForm()">&times;</span>
     </div>
     <div class="form">
-        <h1 class="title">Upload a flight</h1>
         <form action="uploadFlight.php" class="myform" method="post">
+            <h1 class="title">Upload a flight</h1></br>
             <div class="control-from">
                 <label for="flightNumber">Flight Number</label>
                 <input type="text" id="flightNumber" name="flightNumber" value="" required>

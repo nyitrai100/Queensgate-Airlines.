@@ -84,14 +84,15 @@
     margin-bottom:20px;
     border:none;
     width: 50vw;
+    background: linear-gradient(to bottom, #0d0d0d, #878686);
+    border-radius: 5%;
 }
 
 .box {
     width: 50vw;
-    background: #191919;
+    background: linear-gradient(to bottom, #0d0d0d, #878686);
     text-align: center;
-
-    border: 2px solid black;
+    border-radius: 5%;
     padding-bottom: 40px;
 }
 
@@ -161,34 +162,18 @@
     text-shadow: black;
     background: linear-gradient(to right, #f0f0f0 0%, #716f6f 0%, #2f2f2f 100%); 
 }
-.flightsTableFlight2{
+.flightsTableFlight2,.flightsTableFlight4, .flightsTableFlight6{
     text-align: center;
     color:white;
     text-shadow: black;
     background: linear-gradient(to right, #2f2f2f 0%, #716f6f 100%); 
 }
-.flightsTableFlight3{
+.flightsTableFlight3,.flightsTableFlight5{
     text-align: center;
     color:white;
     text-shadow: black;
     background: linear-gradient(to right, #716f6f  0%, #2f2f2f 100%); 
 }
-.flightsTableFlight4{
-    text-align: center;
-    color:white;
-    text-shadow: black;
-    background: linear-gradient(to right, #2f2f2f 0%, #716f6f 100%); 
-}
-.flightsTableFlight5{
-    text-align: center;
-    color:white;
-    text-shadow: black;
-    background: linear-gradient(to right, #716f6f  0%, #2f2f2f 100%); 
-}
-
-
-
-
 
 
 
@@ -198,12 +183,12 @@
 
 .wrapper {
     width: 50vw;
-    background: #FFF;
+    background: linear-gradient(to bottom, #0d0d0d, #878686);
     border-radius: 10px;
     box-shadow: 0 25px 70px rgba(0, 0, 0, .05);
     overflow: hidden;
     position: absolute;
-    top: -50%;
+    top: 100%;
     left: 10%;
     right: 10%;
     margin-left: auto; 
@@ -213,9 +198,9 @@
 
 h1.title {
     padding: 15px 0;
-    margin-left: 25px;
+    margin-left: 5px;
     font-weight: normal;
-    color: rgb(36, 94, 165);
+    color: white;
 }
 
 .form {
@@ -223,7 +208,6 @@ h1.title {
 }
 
 .myform {
-    background: #F4F5F7;
     padding: 25px;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -245,7 +229,7 @@ h1.title {
     background: #FFF;
     width: 100%;
     border-radius: 5px;
-    color: rgb(36, 94, 165);
+    color: black;
     font-weight: 700;
     font-size: .9rem;
     text-indent: 15px;
@@ -292,10 +276,12 @@ h1.title {
     width:15vw;
     display: inline;
 }
+
 #crewdiv1, #crewdiv2, #crewdiv3, #crewdiv4{
     display: flex;
     flex-direction: row;
     margin-top:10px;
+    justify-content: space-between;
 
 }
 /* uploading form ends */ 
@@ -349,10 +335,6 @@ h1.title {
 /* search ends */
 
 .table-section{
-    /* background-color: rgb(176, 222, 246);
-    margin-top: -50px;
-    padding-top: 20px;
-    border: 2px solid black; */
     background: linear-gradient(to bottom, #0d0d0d, #878686);
     margin-top: -50px;
     padding-top: 20px;
