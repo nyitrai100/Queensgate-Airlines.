@@ -71,7 +71,7 @@ if (isset($_GET['search_origin']) && isset($_GET['search_dest']) && isset($_GET[
      <!-- navigation bar ends -->
 
      <!-- hero container starts -->
-     <div class="bg-image-browser py-lg-14 py-12 bg-cover padding-hero mb-5 vh-100">
+     <div class="bg-image-browser py-lg-14 py-12 bg-cover padding-hero mb-5 ">
       <!-- title starts -->
       <h6 class=" display-4 fw-bold  flex text-center text-black shadow-title2"> Browser Page </h6>
        <!-- title ends -->
@@ -103,8 +103,8 @@ if (isset($_GET['search_origin']) && isset($_GET['search_dest']) && isset($_GET[
  <!-- hero container ends -->
  <div class="bg-color">
 <!-- search starts -->
-<div class="container justify-content-center"> 
-        <div class="row ">
+<!-- <div class="container justify-content-center"> 
+        <div class="row">
             <div class="col-md-12">
                 <form method="GET" action="browser.php">
                     <div class="input-group mb-3">
@@ -149,7 +149,57 @@ if (isset($_GET['search_origin']) && isset($_GET['search_dest']) && isset($_GET[
                 </form>
             </div>
         </div>
+    </div> -->
+    <div class="container justify-content-center"> 
+    <div class="row">
+        <div class="col-md-12">
+            <form method="GET" action="browser.php">
+                <div class="search-container">
+                <div class="input-group mb-3">
+                    <input type="text" name="search_origin" value="<?php echo isset($_GET['search_origin']) ? $_GET['search_origin'] : ''; ?>" class="form-control input-text borderSearch" id="displayDepartures" placeholder="Search departures....">
+                    <div class="input-group-append">
+                        <button class="btn btn-sm iconBorder" type="submit">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search ">
+                                <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            </svg>
+                        </button>
+                        <div class="input-group-append">
+                            <button class="btn btn-sm iconBorder" type="reset">
+                                Reset
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <div class="filter">
+                        <p>Filter:</p>    
+                    </div>
+                    <div class="checkboxes">
+                        <label class="destinationCheckbox">Destination
+                            <input type="checkbox" name="destinationCheckbox" id="destinationCheckbox" onclick="display(), disappear()">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="flightNumberCheckbox">Flight Number
+                            <input type="checkbox" name="flightNumberCheckbox" id="flightNumberCheckbox" onclick="display(), disappear()">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="dateCheckbox">Date
+                            <input type="checkbox" name="dateCheckbox" id="dateCheckbox" onclick="display(), disappear()">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="input-group mb-3">
+                    <input type="text" name="search_dest" value="<?php echo isset($_GET['search_dest']) ? $_GET['search_dest'] : ''; ?>" class="form-control input-text" id="displayDestination" placeholder="Search your destination....">
+                    <input type="text" name="search_num" value="<?php echo isset($_GET['search_num']) ? $_GET['search_num'] : ''; ?>" class="form-control input-text" id="displayFlight" placeholder="Search Flight Number....">
+                    <input type="date" name="search_date" value="<?php echo isset($_GET['search_date']) ? $_GET['search_date'] : ''; ?>" class="form-control input-text" id="displayDate" placeholder="00/00/0000">
+                </div>
+            </div>
+            </form>
+        </div>
     </div>
+</div>
+
 
 <!-- search ends -->
    
