@@ -101,7 +101,7 @@ if (isset($_GET['search_origin']) && isset($_GET['search_dest']) && isset($_GET[
    </div>
     </div>
  <!-- hero container ends -->
- <div class="bg-color">
+ <div class="table-section">
 <!-- search starts -->
     <div class="container justify-content-center"> 
     <div class="row">
@@ -167,7 +167,7 @@ if (isset($_GET['search_origin']) && isset($_GET['search_dest']) && isset($_GET[
             // Output the table
             echo "<table style='width: 100%;'>
                     <thead>
-                        <tr style='text-align: center; background: white; color:black;'>
+                        <tr class='flightsTableTitles'>
                             <th>Flight Date</th>
                             <th>Flight Number</th>
                             <th>Flight Origin</th>
@@ -180,11 +180,11 @@ if (isset($_GET['search_origin']) && isset($_GET['search_dest']) && isset($_GET[
                     <tbody>";
                     foreach ($flights as $flight) {
                         echo "<tr style='background: black; color:white;'>
-                                <td style='text-align: center;'>{$flight['flight_date']}</td>
-                                <td style='text-align: center;'>{$flight['flight_num']}</td>
-                                <td style='text-align: center;'>{$flight['flight_origin']}</td>
-                                <td style='text-align: center;'>{$flight['flight_destination']}</td>
-                                <td style='text-align: center;'><a href='flightDetails.php?flight_num={$flight["flight_num"]}'> More </a> </td>";
+                                <td class='flightsTableFlight1'>{$flight['flight_date']}</td>
+                                <td class='flightsTableFlight2'>{$flight['flight_num']}</td>
+                                <td class='flightsTableFlight3'>{$flight['flight_origin']}</td>
+                                <td class='flightsTableFlight4'>{$flight['flight_destination']}</td>
+                                <td class='flightsTableFlight5'><a href='flightDetails.php?flight_num={$flight["flight_num"]}'> More </a> </td>";
                                 if (isset($_SESSION["user"]) && $_SESSION["admin"]) {
                                     echo "<td style='text-align: center;'>
                                             <form action='deleteFlight.php' method='post'>

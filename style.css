@@ -54,7 +54,7 @@
 }
 
 .padding-hero{
-    padding-bottom: 130px;
+    padding-bottom: 200px;
     padding-top: 80px;
     border-bottom: 2px solid white;
 }
@@ -148,10 +148,42 @@
 /* login css ends*/
 
 
-.flightsTable{
+.flightsTableTitles{
+    background: linear-gradient(to bottom, #f0f0f0 0%, #716f6f 50%, #2f2f2f 100%); 
     text-align: center;
-    background-color: red;
-    border-collapse: collapse;
+    color:black;
+    text-shadow: white;
+}
+
+.flightsTableFlight1{
+    text-align: center;
+    color:white;
+    text-shadow: black;
+    background: linear-gradient(to right, #f0f0f0 0%, #716f6f 0%, #2f2f2f 100%); 
+}
+.flightsTableFlight2{
+    text-align: center;
+    color:white;
+    text-shadow: black;
+    background: linear-gradient(to right, #2f2f2f 0%, #716f6f 100%); 
+}
+.flightsTableFlight3{
+    text-align: center;
+    color:white;
+    text-shadow: black;
+    background: linear-gradient(to right, #716f6f  0%, #2f2f2f 100%); 
+}
+.flightsTableFlight4{
+    text-align: center;
+    color:white;
+    text-shadow: black;
+    background: linear-gradient(to right, #2f2f2f 0%, #716f6f 100%); 
+}
+.flightsTableFlight5{
+    text-align: center;
+    color:white;
+    text-shadow: black;
+    background: linear-gradient(to right, #716f6f  0%, #2f2f2f 100%); 
 }
 
 
@@ -299,13 +331,6 @@ h1.title {
 #displayDestination::placeholder, #displayFlight::placeholder{
     color:white;
 }
-/* #displayDepartures{
-    background-color: black;
-    color:white;
-}
-#displayDepartures::placeholder{
-    color:white;
-} */
 .search-container {
     background: linear-gradient(to bottom, #fbfafa, #0a0a0a);
     padding: 30px;
@@ -323,7 +348,7 @@ h1.title {
 }
 /* search ends */
 
-.bg-color{
+.table-section{
     /* background-color: rgb(176, 222, 246);
     margin-top: -50px;
     padding-top: 20px;
@@ -332,5 +357,5 @@ h1.title {
     margin-top: -50px;
     padding-top: 20px;
     border-top: 2px solid black;
-
+    padding-bottom: 200px;
 }
