@@ -1,8 +1,15 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Display the details for a country</title>
+<title>Flight Details</title>
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+ <!-- bootstrap links starts -->
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+ <!-- bootstrap links ends -->
+<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+<!-- stylesheets start -->
+<link rel="stylesheet" href="style.css?v=<?php echo time(); ?>">
+<!-- stylesheets ends -->
 </head>
 <body>
 <p><a href="browser.php"><<< Back to Browser</a></p>
@@ -56,6 +63,10 @@ if (isset($_SESSION['flights'])) {
     echo "<p>Session data not found. Please go back and try again.</p>";
 }
 ?>
+
+
+
+
 
 </section>
 </body>
