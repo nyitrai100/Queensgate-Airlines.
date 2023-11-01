@@ -109,7 +109,7 @@ if (isset($_GET['search_origin']) && isset($_GET['search_dest']) && isset($_GET[
             <form method="GET" action="browser.php">
                 <div class="search-container">
                 <div class="input-group mb-3">
-                    <input type="text" name="search_origin" value="<?php echo isset($_GET['search_origin']) ? $_GET['search_origin'] : ''; ?>" class="form-control input-text" id="displayDepartures" placeholder="Search departures....">
+                    <input type="text" name="search_origin" value="<?php echo isset($_GET['search_origin']) ? $_GET['search_origin'] : ''; ?>" class="form-control input-text" id="displayDepartures" placeholder="Search flight origin....">
                     <div class="input-group-append">
                         <button class="btn btn-sm iconBorder" type="submit">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search ">
