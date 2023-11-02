@@ -43,7 +43,7 @@
 
     <div class="bg-img py-lg-14 py-12 bg-cover padding-hero ">
       <!-- title starts -->
-      <h1 class=" display-4 fw-bold  mb-5 flex text-center text-white shadow-title"> QueensGate Airlines </h1>
+      <h1 class=" display-4 fw-bold  mb-5 flex text-center text-white shadow-title index-MT"> QueensGate Airlines </h1>
        <!-- title ends -->
     <!-- container -->
     <div class="container pt-5 mt-5">

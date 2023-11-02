@@ -43,7 +43,7 @@
      <!-- hero container starts -->
      <div class="bg-image-browser py-lg-14 py-12 padding-hero mb-5 ">
       <!-- title starts -->
-      <h6 class=" display-4 fw-bold  flex text-center text-black shadow-title2"> Browser Page </h6>
+      <h6 class=" display-4 fw-bold flex text-center text-black shadow-title2 browser-MT"> Browser Page </h6>
        <!-- title ends -->
        <div class="container pt-5 mt-5">
         <!-- row -->

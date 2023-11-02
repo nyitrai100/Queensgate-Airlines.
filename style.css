@@ -86,6 +86,10 @@
     color: black;
     
 }
+
+.browser-MT, .index-MT{
+  margin-top: 60px;
+}
 /* hero-page ends */
 
 /* about starts */
