@@ -16,7 +16,7 @@
 
                 // First Name
                 var firstNameLabel = document.createElement("label");
-                firstNameLabel.textContent = (i + 1) + " Crew " + "First Name ";
+                firstNameLabel.textContent = (i + 1) + ".First Name ";
                 var firstNameInput = document.createElement("input");
                 firstNameInput.type = "text";
                 firstNameLabel.id= "firstNameLabel" + (i + 1);
@@ -30,7 +30,7 @@
 
                 // Last Name
                 var lastNameLabel = document.createElement("label");
-                lastNameLabel.textContent = (i + 1) + " Last Name ";
+                lastNameLabel.textContent = (i + 1) + ".Last Name ";
                 var lastNameInput = document.createElement("input");
                 lastNameInput.type = "text";
                 lastNameLabel.id= "lastNameLabel" + (i + 1);

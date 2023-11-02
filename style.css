@@ -300,11 +300,11 @@ h1.title {
 }
 
 #firstName1,#firstName2,#firstName3,#firstName4{
-    width:15vw;
+    width:12vw;
     display: inline;
 }
 #lastName1,#lastName2,#lastName3,#lastName4{
-    width:15vw;
+    width:12vw;
     display: inline;
 }
 
@@ -318,6 +318,10 @@ h1.title {
 #firstNameLabel1, #firstNameLabel2, #firstNameLabel3, #firstNameLabel4, #lastNameLabel1, #lastNameLabel2, #lastNameLabel3, #lastNameLabel4{
  display: flex;
  align-self: center;
+ justify-content: flex-start;
+
+  padding-left: 10px;
+ /*padding-right: 0px; */
 }
 /* uploading form ends */ 
 
