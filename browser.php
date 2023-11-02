@@ -54,18 +54,11 @@ if (isset($_GET['search_origin']) && isset($_GET['search_dest']) && isset($_GET[
                 {echo "<a class='nav-link' href='./browser.php'>Browser</a>"; } ?>
                 
                 </li>
-                <!-- <li class="nav-item">
-                <a class="nav-link" href="#">Contact</a>
-                </li> -->
                 <li class="nav-item">
                 <?php if(isset($_SESSION["user"]))
                 {echo "<a class='nav-link' href='logout.php'>Log out</a>"; }
                        else{echo " <a class='nav-link' href='#' onclick='openLogin()'>Login</a>"; }       ?>           
                 </li>
-                <!-- <li class="nav-item">
-                <a class="nav-link" href="#" onclick="openLogin()">Login</a>
-                
-                </li> -->
             </ul>
         </nav>
      <!-- navigation bar ends -->
@@ -235,9 +228,8 @@ if (isset($_GET['search_origin']) && isset($_GET['search_dest']) && isset($_GET[
             </div>
             <div class="full-width">
                 <label for="crewNumbers">Crew Number</label>
-                <select id="crewNumbers" name="crewNumbers" onchange="updateCrewMembers()">
-
-                    <option value="0">Unknown</option>
+                <select id="crewNumbers" name="crewNumbers" onchange="updateCrewMembers()"  required>
+                <option value="">Select</option>
                     <option value="1">One</option>
                     <option value="2">Two</option>
                     <option value="3">Three</option>
@@ -253,84 +245,6 @@ if (isset($_GET['search_origin']) && isset($_GET['search_dest']) && isset($_GET[
     </div>
 </div>
 
-<!-- create dinamically the inputs for crew members -->
-<script>
-    function updateCrewMembers() {
-    var crewNumbers = document.getElementById("crewNumbers").value;
-    var crewMembersContainer = document.getElementById("crewMembersContainer");
-    crewMembersContainer.innerHTML = ""; 
-    for (var i = 0; i < crewNumbers; i++) {
-    var crewDiv = document.createElement("div");
-    crewDiv.id = "crewdiv" + (i + 1);
-
-    // First Name
-    var firstNameLabel = document.createElement("label");
-    firstNameLabel.textContent = (i + 1) + " Crew " + "First Name ";
-    var firstNameInput = document.createElement("input");
-    firstNameInput.type = "text";
-    firstNameInput.id = "firstName" + (i + 1);
-    firstNameInput.name = "firstName" + (i + 1);
-    firstNameInput.required = true;
-
-    // Append first name elements to crewDiv
-    crewDiv.appendChild(firstNameLabel);
-    crewDiv.appendChild(firstNameInput);
-
-    // Last Name
-    var lastNameLabel = document.createElement("label");
-    lastNameLabel.textContent = (i + 1) + " Last Name ";
-    var lastNameInput = document.createElement("input");
-    lastNameInput.type = "text";
-    lastNameInput.id = "lastName" + (i + 1);
-    lastNameInput.name = "lastName" + (i + 1);
-    lastNameInput.required = true;
-
-    // Append last name elements to crewDiv
-    crewDiv.appendChild(lastNameLabel);
-    crewDiv.appendChild(lastNameInput);
-
-    // Append crewDiv to crewMembersContainer
-    crewMembersContainer.appendChild(crewDiv);
-}
-
-}
-
-
-</script>
-<!-- create dinamic search inputs -->
-
-<script>
-    // Display the input field
-    function display() {
-        if (document.getElementById('destinationCheckbox').checked == true) {
-            document.getElementById('displayDestination').style.display = 'flex';
-        }
-        if (document.getElementById('flightNumberCheckbox').checked == true) {
-            document.getElementById('displayFlight').style.display = 'flex';
-        }
-        if (document.getElementById('dateCheckbox').checked == true) {
-            document.getElementById('displayDate').style.display = 'flex';
-        }
-
-    }
-
-    // Disappear the input field
-    function disappear() {
-        if (document.getElementById('destinationCheckbox').checked == false) {
-            document.getElementById('displayDestination').style.display = 'none';
-        }
-        if (document.getElementById('flightNumberCheckbox').checked == false) {
-            document.getElementById('displayFlight').style.display = 'none';
-        }
-        if (document.getElementById('dateCheckbox').checked == false) {
-            document.getElementById('displayDate').style.display = 'none';
-        }
-    }
-    function refreshPage() {
-        location.reload(true); // Passing true forces a reload from the server, not the cache
-    }
-</script>
-
 <!-- form ends -->
 
     </section>
@@ -343,6 +257,8 @@ if (isset($_GET['search_origin']) && isset($_GET['search_dest']) && isset($_GET[
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <!-- bootstrap links ends -->
 <script src="./formPopUp.js"></script>
+<script src="./search.js"> </script>
+<script src="./uploadForm.js"> </script>
 </body>
 </html>
 
