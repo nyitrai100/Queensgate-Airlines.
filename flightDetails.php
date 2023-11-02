@@ -31,7 +31,7 @@ if (isset($_SESSION['flights'])) {
     }
     if ($flight) {
         echo "
-			<div class='section_our_solution'>
+			<div class='section_our_solution m-5'>
             <div class='row'>
                 <div class='col-lg-12 col-md-12 col-sm-12'>
                 <div class='our_solution_category'>
