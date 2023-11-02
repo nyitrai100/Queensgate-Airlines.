@@ -28,7 +28,10 @@ if (isset($_POST['email'])) {
             exit();
         }
     }
-    echo "<p>That's the wrong username/password</p>";
+    echo "<script>alert('That\'s the wrong username/password');</script>";
+    echo "<script>window.location.href = 'index.php';</script>";
+    exit;
+
 }
 
 

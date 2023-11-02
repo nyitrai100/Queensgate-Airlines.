@@ -14,7 +14,7 @@ try {
                             flights.date AS flight_date,
                             flight_numbers.origin AS flight_origin,
                             flight_numbers.destination AS flight_destination, 
-                            GROUP_CONCAT(' ', crew.first_name, ' ', crew.last_name, ' ') AS crew_members
+                            GROUP_CONCAT(' ', crew.first_name, ' ', crew.last_name, '') AS crew_members
                              FROM
                             flights
                           INNER JOIN flight_numbers ON flights.flight_num = flight_numbers.flight_num
