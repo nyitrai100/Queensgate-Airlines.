@@ -1,4 +1,4 @@
-// uptade crew member dinamically 
+// update crew member dinamically 
 
     function updateCrewMembers() {
         var crewNumbers = document.getElementById("crewNumbers").value;

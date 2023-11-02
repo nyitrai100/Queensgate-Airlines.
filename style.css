@@ -1,3 +1,4 @@
+/* nav css starts */
 .nav-link{
     color: white;
     font-weight: 500;
@@ -13,7 +14,6 @@
     background-color: white;
     border-radius: 25%;
     padding:6px;
-    /* text-decoration: underline; */
 }
 .nav-container{
     position: relative;
@@ -40,6 +40,9 @@
     margin-left: -15px;
     margin-bottom: 25px;
 }
+/* nav css ends */
+
+/* hero-page starts */
 .firstParagraph{
     margin-top: -60px;
     font-weight: bold;
@@ -52,12 +55,9 @@
      width:100%;
 }
 .bg-image-browser{
-      /* background-image: url("https://images.unsplash.com/photo-1609408341205-861253559a83?auto=format&fit=crop&q=80&w=3174&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") ;
-       */
        background-image: url("https://images.unsplash.com/photo-1528824036966-36325e3140fa?auto=format&fit=crop&q=80&w=2940&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
       background-size:cover; 
       max-width: 100%; 
-      /* opacity: 88%; */
       border-bottom: 20px solid black;
 }
 
@@ -82,8 +82,13 @@
     color: black;
     
 }
+/* hero-page ends */
 
-
+/* about starts */
+.about-section{
+  padding: 20px; 
+  text-align: center;}
+/* about ends */
 
 /* login css starts*/
 .login{  
@@ -163,7 +168,10 @@
   }
 /* login css ends*/
 
-
+/* FlightsTable starts */
+.flightTableSize{
+  width: 100%;
+}
 .flightsTableTitles{
     background: linear-gradient(to bottom, #f0f0f0 0%, #716f6f 50%, #2f2f2f 100%); 
     text-align: center;
@@ -190,7 +198,7 @@
     background: linear-gradient(to right, #716f6f  0%, #2f2f2f 100%); 
 }
 
-
+/* FlightsTable ends */
 
 
 
@@ -311,7 +319,6 @@ h1.title {
     width:100%;
     display: flex;
     justify-content: space-around;
-    /* border: 1px solid gray; */
     border-radius: 2%;
     background-color: black;
     color:white;
@@ -339,7 +346,6 @@ h1.title {
 .search-container {
     background: linear-gradient(to bottom, #fbfafa, #0a0a0a);
     padding: 30px;
-    /* border: 2px solid black; */
     border-radius: 20px;
     display: flex;
     justify-content: center;
@@ -361,7 +367,7 @@ h1.title {
     padding-bottom: 200px;
 }
 
-/* Flightdetailspage start */
+/* FlightdetailsPage start */
 .bg-color-flightDetails{
     background: linear-gradient(to bottom, #fbfafa, #0a0a0a);
 }

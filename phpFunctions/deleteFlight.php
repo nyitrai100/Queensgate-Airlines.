@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-include("./classes/dbh.php");
+include("../Database/dbh.php");
 
 if (isset($_POST['deleteFlight'])) {
     $flightNumber = $_POST['flight_num'];
@@ -26,6 +26,12 @@ if (isset($_POST['deleteFlight'])) {
         $stmtDeleteCrew = $conn->prepare($sqlDeleteCrew);
         $stmtDeleteCrew->bindParam(':flight_id', $flightId);
         $stmtDeleteCrew->execute();
+       
+        // if ($stmtDeleteCrew->execute()) {
+        //     echo "Deletion successful.";
+        // } else {
+        //     echo "Error deleting crew: " . $stmtDeleteCrew->errorInfo()[2];
+        // }
 
         // Delete from flights table
         $sqlDeleteFlights = "DELETE FROM flights WHERE id = :flight_id";
@@ -52,7 +58,7 @@ if (isset($_POST['deleteFlight'])) {
         $stmtDeleteFlightNumbers->bindParam(':flight_num', $flightNumber);
         $stmtDeleteFlightNumbers->execute();
 
-        echo "<script>alert('Flight deleted successfully.'); window.location.href = './browser.php';</script>";
+        echo "<script>alert('Flight deleted successfully.'); window.location.href = '../browser.php';</script>";
         exit;
     } catch (PDOException $exception) {
         echo "Error: " . $exception->getMessage();

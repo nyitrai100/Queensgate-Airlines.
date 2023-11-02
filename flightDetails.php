@@ -116,13 +116,13 @@ if (isset($_SESSION['flights'])) {
                 </div>
             </div>
             </div>";
+        } else {
+            echo "<p>Can't find any records.</p>";
+        }
     } else {
-        echo "<p>Can't find any records.</p>";
+        echo "<p>Session data not found. Please go back and try again.</p>";
     }
-} else {
-    echo "<p>Session data not found. Please go back and try again.</p>";
-}
-?>
+    ?>
 
 </body>
 </html>

@@ -24,12 +24,12 @@ if (isset($_POST['email'])) {
         if (password_verify($password, $row['password'])) {
             $_SESSION["user"] = $email;
             $_SESSION["admin"] = ($row['role'] == 2);
-            header("Location: index.php");
+            header("Location: ../index.php");
             exit();
         }
     }
     echo "<script>alert('That\'s the wrong username/password');</script>";
-    echo "<script>window.location.href = 'index.php';</script>";
+    echo "<script>window.location.href = '../index.php';</script>";
     exit;
 
 }

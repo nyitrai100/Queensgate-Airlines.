@@ -1,6 +1,6 @@
 <?php 
   session_start();
-  include("./classes/dbh.php");
+  include("./Database/dbh.php");
 ?>
 
 
@@ -31,18 +31,11 @@
                 {echo "<a class='nav-link' href='./browser.php'>Browser</a>"; } ?>
                 
                 </li>
-                <!-- <li class="nav-item">
-                <a class="nav-link" href="#">Contact</a>
-                </li> -->
                 <li class="nav-item">
                 <?php if(isset($_SESSION["user"]))
-                {echo "<a class='nav-link' href='logout.php'>Log out</a>"; }
+                {echo "<a class='nav-link' href='./Authentication/logout.php'>Log out</a>"; }
                        else{echo " <a class='nav-link' href='#' onclick='openLogin()'>Login</a>"; }       ?>           
                 </li>
-                <!-- <li class="nav-item">
-                <a class="nav-link" href="#" onclick="openLogin()">Login</a>
-                
-                </li> -->
             </ul>
         </nav>
      <!-- navigation bar ends -->
@@ -51,12 +44,9 @@
     <div class="bg-img py-lg-14 py-12 bg-cover padding-hero ">
       <!-- title starts -->
       <h1 class=" display-4 fw-bold  mb-5 flex text-center text-white shadow-title"> QueensGate Airlines </h1>
-
        <!-- title ends -->
     <!-- container -->
     <div class="container pt-5 mt-5">
-     
- 
       <!-- row -->
       <div class="row align-items-center">
         <div class="col-lg-4 col-12">
@@ -80,7 +70,7 @@
     <div class="row">
       <div class="col-md-6"> 
         <div class="card"> 
-          <form action="login_process.php" method="post" class="box">
+          <form action="./Authentication/login_process.php" method="post" class="box">
             <div class="d-flex justify-content-between align-items-center">
               <span class="close-btn text-white p-2 cursor-pointer" onclick="closeLogin()">&times;</span>
             </div>
@@ -98,18 +88,13 @@
 <!-- main content starts -->
 <div class="container-fluid bg-light text-black pb-5">
     <div class="container-fluid main-content">
-      <section style="padding: 20px; text-align: center;">
+      <section class="about-section">
         <h2 class="pb-5">Welcome to Queensgate Airlines</h2>
         <p>Discover Your Next Flight Experience with Queensgate Airlines</p>
-    
-        <p>Our platform makes it easy to find and book the best flights to your desired destinations.</p>
-    
+        <p>Our platform makes it easy to find the best flights to your desired destinations.</p>
         <p>Explore local flights and gather the information you need effortlessly by logging in and browsing our flight listings.</p>
-    
-        <p>Take an active role by adding new flights to our system, contributing to a more comprehensive and up-to-date list.</p>
-    
+        <p>Actively contribute by adding new flights to our platform, enhancing our list with comprehensive and up-to-date information.</p>   
         <p>Questions? Feel free to reach out to us anytime.</p>
-    
         <p>Thank you for choosing Queensgate Airlines for your flight booking needs!</p>
     </section>
       </div>
@@ -121,7 +106,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <!-- bootstrap links ends -->
 <!-- loginPopUp javascript starts -->
-<script src="./loginPopUp.js"></script>
+<script src="./jsFunctions/loginPopUp.js"></script>
 <!-- loginPopUp javascript ends -->
 </body>
 </html>

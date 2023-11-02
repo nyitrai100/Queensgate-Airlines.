@@ -1,6 +1,6 @@
 <?php 
 session_start();
-include("./classes/dbh.php");
+include("../Database/dbh.php");
 
 // Taking all values from the form data(input)
 $flightNumber = $_REQUEST['flightNumber'];
@@ -64,7 +64,7 @@ try {
 
     // Commit the transaction
     $conn->commit();
-    echo "<script>alert('Data inserted successfully.'); window.location.href = './browser.php';</script>";
+    echo "<script>alert('Data inserted successfully.'); window.location.href = '../browser.php';</script>";
     exit;
 
 } catch (PDOException $exception) {
