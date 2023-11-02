@@ -17,7 +17,7 @@
     <!-- stylesheets ends -->
     <title>Queensgate Airlines</title>
 </head>
-<body>
+<body class="bg-light">
 <?php echo "<p class='accountEmail'>{$_SESSION['user']}</p>"; ?>
                 
           <!-- navigation bar starts -->

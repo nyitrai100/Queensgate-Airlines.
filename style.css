@@ -1,3 +1,7 @@
+/* body colors */
+.browser-body{
+  background:#878686;
+ }
 /* nav css starts */
 .nav-link{
     color: white;
@@ -69,7 +73,7 @@
 }
 
 .padding-hero{
-    padding-bottom: 200px;
+    padding-bottom: 280px;
     padding-top: 80px;
     border-bottom: 2px solid white;
 }
