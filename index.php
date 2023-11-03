@@ -38,7 +38,7 @@
                 </li>
             </ul>
         </nav>
-     <!-- navigation bar ends -->
+     <!-- navigation bar ends --->
 
 
     <div class="bg-img py-lg-14 py-12 bg-cover padding-hero ">
