@@ -31,7 +31,7 @@
                 {echo "<a class='nav-link' href='./browser.php'>Browser</a>"; } ?>
                 
                 </li>
-                <li class="nav-item">
+                <li class="navitem">
                 <?php if(isset($_SESSION["user"]))
                 {echo "<a class='nav-link' href='./Authentication/logout.php'>Log out</a>"; }
                        else{echo " <a class='nav-link' href='#' onclick='openLogin()'>Login</a>"; }       ?>           
