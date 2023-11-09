@@ -11,8 +11,7 @@ $flightOrigin = $_REQUEST['flightOrigin'];
 $flightDestination = $_REQUEST['flightDestination'];
 
 $crewNumbers = $_REQUEST['crewNumbers'];
-$crewMembers = array(); // Create an array to store crew members' names
-
+$crewMembers = array(); 
 for ($i = 0; $i < $crewNumbers; $i++) {
     $crewMembers[] = array(
         'firstName' => $_REQUEST['firstName' . ($i + 1)],

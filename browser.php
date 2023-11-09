@@ -55,7 +55,7 @@
                         Browser<br/>
                         Top Flights  to Europe <br/>  
                             with <br/>
-                        <span class="text-white shadow-title">OueensGate<br/></span>
+                        <span class="text-white shadow-title">QueensGate<br/></span>
                 </div>
                 </div>
             </div>
@@ -137,10 +137,8 @@
                             <th>Flight Number</th>
                             <th>Flight Origin</th>
                             <th>Flight Destination</th>
-                            <th>Details</th>";
-                            if(isset($_SESSION["user"]) && $_SESSION["admin"])
-                            {echo " <th> Delete </th>";} 
-                        echo"</tr>
+                            <th>Details</th>
+                           </tr>
                     </thead>
                     <tbody>";
                     foreach ($flights as $flight) {
@@ -149,16 +147,8 @@
                                 <td class='flightsTableFlight2'>{$flight['flight_num']}</td>
                                 <td class='flightsTableFlight3'>{$flight['flight_origin']}</td>
                                 <td class='flightsTableFlight4'>{$flight['flight_destination']}</td>
-                                <td class='flightsTableFlight5'><a href='flightDetails.php?flight_num={$flight["flight_num"]}'> More </a> </td>";
-                                if (isset($_SESSION["user"]) && $_SESSION["admin"]) {
-                                    echo "<td class='flightsTableFlight6'>
-                                            <form action='./phpFunctions/deleteFlight.php' method='post'>
-                                                <input type='hidden' name='flight_num' value='{$flight["flight_num"]}'>
-                                                <button type='submit' name='deleteFlight'>Delete</button>
-                                            </form>
-                                          </td>";
-                                }
-                                echo"</tr>";
+                                <td class='flightsTableFlight5'><a href='flightDetails.php?flight_num={$flight["flight_num"]}'> More </a> </td>
+                                </tr>";
                     }
         
                     echo "</tbody></table>";
@@ -176,40 +166,139 @@
         <form action="./phpFunctions/uploadFlight.php" class="myform" method="post">
             <h1 class="title">Upload a flight</h1></br>
             <div class="control-from">
+                <!-- <label for="flightNumber">Flight Number</label>
+                <input type="text" id="flightNumber" name="flightNumber" value="" required> -->
+
                 <label for="flightNumber">Flight Number</label>
-                <input type="text" id="flightNumber" name="flightNumber" value="" required>
+                <select id="flightNumber" name="flightNumber"  required>
+                <option value=''>Select </option>
+                <?php
+                    if (!empty($flights)) {
+                        $uniqueFlightNumbers = array();
+
+                        foreach ($flights as $flight) {
+                            $flightNumber = trim($flight['flight_num']);
+
+                            if (!in_array($flightNumber, $uniqueFlightNumbers)) {
+                                echo "<option value='1'>{$flightNumber}</option>";
+                                $uniqueFlightNumbers[] = $flightNumber;
+                            }
+                        }
+                    }
+                    ?>
+                </select>
+
             </div>
             <div class="control-from">
+                <!-- <label for="aircraftMadeBy">Aircraft Made by</label>
+                <input type="text" id="aircraftMadeBy" name="aircraftMadeBy" value="" required> -->
+
                 <label for="aircraftMadeBy">Aircraft Made by</label>
-                <input type="text" id="aircraftMadeBy" name="aircraftMadeBy" value="" required>
+                <select id="aircraftMadeBy" name="aircraftMadeBy"  required>
+                <option value=''>Select </option>
+                <?php
+                    if (!empty($flights)) {
+                        $uniqueAircraftMakes = array();
+
+                        foreach ($flights as $flight) {
+                            $aircraftMake = trim($flight['aircraft_make']);
+
+                            if (!in_array($aircraftMake, $uniqueAircraftMakes)) {
+                                echo "<option value='1'>{$aircraftMake}</option>";
+                                $uniqueAircraftMakes[] = $aircraftMake;
+                            }
+                        }
+                    }
+                    ?>
+                </select>
+
+
             </div>
             <div class="control-from">
+                <!-- <label for="aircraftModel">Aircraft Model</label>
+                <input type="text" id="aircraftModel" name="aircraftModel" value="" required> -->
+
                 <label for="aircraftModel">Aircraft Model</label>
-                <input type="text" id="aircraftModel" name="aircraftModel" value="" required>
+                <select id="aircraftModel" name="aircraftModel"  required>
+                <option value=''>Select </option>
+                <?php
+                        if (!empty($flights)) {
+                            $uniqueAircraftModels = array();
+
+                            foreach ($flights as $flight) {
+                                $aircraftModel = trim($flight['aircraft_model']);
+
+                                if (!in_array($aircraftModel, $uniqueAircraftModels)) {
+                                    echo "<option value='1'>{$aircraftModel}</option>";
+                                    $uniqueAircraftModels[] = $aircraftModel;
+                                }
+                            }
+                        }
+                 ?>
+                        </select>
+                
             </div>
             <div class="control-from">
                 <label for="flightDate">Flight Date</label>
                 <input type="date" id="flightDate" name="flightDate" value="" required>
             </div>
             <div class="control-from">
-                <label for="flightOrigin">Flight Origin</label>
-                <input type="text" id="flightOrigin" name="flightOrigin" value="" required>
+                <!-- <label for="flightOrigin">Flight Origin</label>
+                <input type="text" id="flightOrigin" name="flightOrigin" value="" required> -->
+
+                <label for="flightOrigin">Flight origin</label>
+                <select id="flightOrigin" name="flightOrigin"  required>
+                <option value=''>Select </option>
+                <?php
+                        if (!empty($flight_number_tables)) {
+                            $uniqueOrigins = array();
+
+                            foreach ($flight_number_tables as $flight_number_table) {
+                                $origin = trim($flight_number_table['origin']);
+
+                                if (!in_array($origin, $uniqueOrigins)) {
+                                    echo "<option value='1'>{$origin}</option>";
+                                    $uniqueOrigins[] = $origin;
+                                }
+                            }
+                        }
+                        ?>
+                </select>
+
             </div>
             <div class="control-from">
+                <!-- <label for="flightDestination">Flight Destination</label>
+                <input type="text" id="flightDestination" name="flightDestination" value="" required> -->
                 <label for="flightDestination">Flight Destination</label>
-                <input type="text" id="flightDestination" name="flightDestination" value="" required>
+                <select id="flightDestination" name="flightDestination"  required>
+                <option value=''>Select </option>
+                <?php
+                if (!empty($flight_number_tables)) {
+                    $uniqueDestinations = array();
+                
+                    foreach ($flight_number_tables as $flight_number_table) {
+                        $destination = trim($flight_number_table['destination']);
+                
+                        if (!in_array($destination, $uniqueDestinations)) {
+                            echo "<option value='1'> {$destination}</option>";
+                            $uniqueDestinations[] = $destination;
+                        }
+                    }
+                }
+                ?>
+                </select>
             </div>
             <div class="full-width">
                 <label for="crewNumbers">Crew Number</label>
                 <select id="crewNumbers" name="crewNumbers" onchange="updateCrewMembers()"  required>
-                <option value="">Select</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                    <option value="4">Four</option>
+                <option value=''>Select </option>
+                <?php
+                    if (!empty($flights)) {  foreach ($flights as $flight) {
+                    
+                        echo "<option value='1'> {$flight['crew_members']}</option>";
+                    }} ?>
                 </select>
-                <div class="pt-5" id="crewMembersContainer">
-                </div>
+
             </div>
             <div class="button">
                 <button id="register">Submit</button>
