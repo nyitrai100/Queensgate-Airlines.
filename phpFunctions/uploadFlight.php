@@ -75,4 +75,4 @@ try {
 // Close the database connection
 $conn = NULL;
 
-?>
+?>s
