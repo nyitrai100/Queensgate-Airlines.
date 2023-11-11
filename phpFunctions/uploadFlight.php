@@ -20,7 +20,7 @@ for ($i = 0; $i < $crewNumbers; $i++) {
 }
 
 try {
-    // Start a transaction
+    // Start a transactio
     $conn->beginTransaction();
 
     // Insert into flight_numbers table
@@ -76,3 +76,4 @@ try {
 $conn = NULL;
 
 ?>
+
