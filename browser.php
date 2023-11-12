@@ -19,22 +19,22 @@
     <title>Queensgate Airlines</title>
 </head>
 <body class="browser-body">
-    <?php echo "<p class='accountEmail'>{$_SESSION['user']}</p>"; ?>
+    <?php echo "<p class='accountEmailBrowser'>{$_SESSION['user']}</p>"; ?>
           <!-- navigation bar starts -->
           <nav class="nav-container mb-2">
             <ul class="nav justify-content-end">
                 <li class="nav-item">
-                <a class="nav-link" href="./index.php">Home</a>
+                <a class="nav-link-browser" href="./index.php">Home</a>
                 </li>
                 <li class="nav-item">
                 <?php if(isset($_SESSION["user"]))
-                {echo "<a class='nav-link' href='./browser.php'>Browser</a>"; } ?>
+                {echo "<a class='nav-link-browser' href='./browser.php'>Browser</a>"; } ?>
                 
                 </li>
                 <li class="nav-item">
                 <?php if(isset($_SESSION["user"]))
-                {echo "<a class='nav-link' href='./Authentication/logout.php'>Log out</a>"; }
-                       else{echo " <a class='nav-link' href='./Authentication/login_process.php' onclick='openLogin()'>Login</a>"; }       ?>           
+                {echo "<a class='nav-link-browser' href='./Authentication/logout.php'>Log out</a>"; }
+                       else{echo " <a class='nav-link-browser' href='./Authentication/login_process.php' onclick='openLogin()'>Login</a>"; }       ?>           
                 </li>
             </ul>
         </nav>
@@ -45,7 +45,7 @@
       <!-- title starts -->
       <h6 class=" display-4 fw-bold flex text-center text-black shadow-title2 browser-MT"> Browser Page </h6>
        <!-- title ends -->
-       <div class="container pt-5 mt-5">
+       <div class="container pt-5 browserHeroMarginTop">
         <!-- row -->
             <div class="row align-items-center">
             <div class="col-lg-3 col-12">

@@ -11,6 +11,7 @@
     margin-bottom: -10px;
     margin-right: 5px;
 }
+
 .nav-link:hover{
     color:black;
     text-shadow: black;
@@ -19,6 +20,43 @@
     border-radius: 25%;
     padding:6px;
 }
+
+.nav-link-browser{
+  color: black;
+  font-weight: 500;
+  text-shadow: black;
+  font-size: medium;
+  margin-bottom: -10px;
+  margin-right: 30px;
+}
+.nav-link-browser:hover{
+  color:white;
+  text-shadow: black;
+  font-weight: 900;
+  background-color: black;
+  border-radius: 25%;
+  padding:6px;
+  text-decoration: none;
+}
+
+.nav-link-flightDetails{
+  color: black;
+  font-weight: 500;
+  text-shadow: black;
+  font-size: medium;
+  margin-bottom: -10px;
+  margin-right: 30px;
+}
+.nav-link-flightDetails:hover{
+  color:white;
+  text-shadow: black;
+  font-weight: 900;
+  background-color: black;
+  border-radius: 25%;
+  padding:6px;
+  text-decoration: none;
+}
+
 .nav-container{
     position: relative;
     top: 65px;
@@ -26,6 +64,8 @@
     z-index: 2;
     background-color: transparent;
 }
+
+
 .shadow-title{
     text-shadow: 2px 2px black;
 
@@ -43,6 +83,25 @@
     background-color: black;
     margin-left: -15px;
     margin-bottom: 25px;
+}
+.accountEmailBrowser{
+    display: flex;
+    justify-content: flex-end;
+    width: 100vw;
+    color: black;
+    background-color: black;
+    margin-left: -15px;
+    margin-bottom: 25px;
+}
+
+.accountEmailFlightDetails{
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 25px;
+}
+
+.vh-150{
+  height: 150vh;
 }
 /* nav css ends */
 
@@ -63,6 +122,9 @@
       background-size:cover; 
       max-width: 100%; 
       border-bottom: 20px solid black;
+}
+.browserHeroMarginTop{
+  margin-top:7rem;
 }
 
 .blue-color{
@@ -87,8 +149,13 @@
     
 }
 
-.browser-MT, .index-MT{
-  margin-top: 60px;
+.browser-MT{
+  margin-top: 23px;
+  padding-bottom: 53px;
+}
+.index-MT{
+  margin-top: 23px;
+  padding-bottom: 60px;
 }
 /* hero-page ends */
 
@@ -390,12 +457,15 @@ height: 25px;}
 }
 
 /* FlightdetailsPage start */
+
+
+
 .bg-color-flightDetails{
     background: linear-gradient(to bottom, #fbfafa, #0a0a0a);
 }
 
 .section_our_solution{
-margin-top: 100px;
+margin-top: 150px;
 }
 .section_our_solution .row {
     align-items: center;
