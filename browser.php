@@ -238,7 +238,7 @@
                         </select>
                 
             </div>
-            <div class="control-from">
+            <div class="control-from" id="flightDateForm">
                 <label for="flightDate">Flight Date</label>
                 <input type="date" id="flightDate" name="flightDate" value="" required>
             </div>
