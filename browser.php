@@ -50,7 +50,7 @@
             <div class="row align-items-center">
             <div class="col-lg-3 col-12">
                 <div>
-                <div class="text-center text-md-start ">   
+                <div class="text-center text-md-start ml-5 mt-5">   
                     <p class="lead firstParagraph text-white shadow-title">
                         Browser<br/>
                         Top Flights  to Europe <br/>  
