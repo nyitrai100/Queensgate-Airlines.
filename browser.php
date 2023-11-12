@@ -175,15 +175,13 @@
                 <?php
                     if (!empty($flights)) {
                         $uniqueFlightNumbers = array();
-                        $counter = 1;
 
                         foreach ($flights as $flight) {
                             $flightNumber = trim($flight['flight_num']);
 
                             if (!in_array($flightNumber, $uniqueFlightNumbers)) {
-                                echo "<option value='{$counter}'>{$flightNumber}</option>";
+                                echo "<option value='{$flightNumber}'>{$flightNumber}</option>";
                                 $uniqueFlightNumbers[] = $flightNumber;
-                                $counter++;
                             }
                         }
                     }
@@ -201,15 +199,13 @@
                 <?php
                     if (!empty($flights)) {
                         $uniqueAircraftMakes = array();
-                        $counter = 1;
 
                         foreach ($flights as $flight) {
                             $aircraftMake = trim($flight['aircraft_make']);
 
                             if (!in_array($aircraftMake, $uniqueAircraftMakes)) {
-                                echo "<option value='{$counter}'>{$aircraftMake}</option>";
+                                echo "<option value='{$aircraftMake}'>{$aircraftMake}</option>";
                                 $uniqueAircraftMakes[] = $aircraftMake;
-                                $counter++;
                             }
                         }
                     }
@@ -228,15 +224,13 @@
                 <?php
                         if (!empty($flights)) {
                             $uniqueAircraftModels = array();
-                            $counter = 1;
 
                             foreach ($flights as $flight) {
                                 $aircraftModel = trim($flight['aircraft_model']);
 
                                 if (!in_array($aircraftModel, $uniqueAircraftModels)) {
-                                    echo "<option value='{$counter}'>{$aircraftModel}</option>";
+                                    echo "<option value='{$aircraftModel}'>{$aircraftModel}</option>";
                                     $uniqueAircraftModels[] = $aircraftModel;
-                                    $counter++;
                                 }
                             }
                         }
@@ -258,15 +252,13 @@
                 <?php
                         if (!empty($flight_number_tables)) {
                             $uniqueOrigins = array();
-                            $counter = 1;
 
                             foreach ($flight_number_tables as $flight_number_table) {
                                 $origin = trim($flight_number_table['origin']);
 
                                 if (!in_array($origin, $uniqueOrigins)) {
-                                    echo "<option value='{$counter}'>{$origin}</option>";
+                                    echo "<option value='{$origin}'>{$origin}</option>";
                                     $uniqueOrigins[] = $origin;
-                                    $counter++;
                                 }
                             }
                         }
@@ -283,15 +275,13 @@
                 <?php
                 if (!empty($flight_number_tables)) {
                     $uniqueDestinations = array();
-                    $counter = 1;
                 
                     foreach ($flight_number_tables as $flight_number_table) {
                         $destination = trim($flight_number_table['destination']);
                 
                         if (!in_array($destination, $uniqueDestinations)) {
-                            echo "<option value='{$counter}'> {$destination}</option>";
+                            echo "<option value='{$destination}'> {$destination}</option>";
                             $uniqueDestinations[] = $destination;
-                            $counter++;
                         }
                     }
                 }
