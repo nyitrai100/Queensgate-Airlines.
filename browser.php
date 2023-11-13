@@ -308,7 +308,7 @@
         </form>
     </div>
 </div>
-<!-- form eds -->
+<!-- form ends -->
 
     </section>
  <!-- table section ends -->
