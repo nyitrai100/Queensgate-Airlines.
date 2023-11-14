@@ -38,12 +38,18 @@ try {
 
     // flightNumberTable for the upload
 
-    // $flightNumberTable = "SELECT * FROM flight_numbers";
     $flightNumberTable = "SELECT DISTINCT flight_num, origin, destination FROM flight_numbers GROUP BY flight_num";
     $flightsNumberDetails = $conn->query($flightNumberTable);
     $flight_number_tables = $flightsNumberDetails->fetchAll();
 
     $_SESSION['flight_number'] = $flight_number_tables;
+
+
+    $flightAircraftTable = "SELECT DISTINCT aircraft.id, aircraft.make, aircraft.model FROM aircraft";
+    $flightsAircraftDetails = $conn->query( $flightAircraftTable );
+    $flight_aircraft_tables = $flightsAircraftDetails ->fetchAll();
+
+    $_SESSION['flight_aircraft'] = $flight_aircraft_tables;
 ?>
 
 
