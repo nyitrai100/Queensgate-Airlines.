@@ -17,13 +17,18 @@ try {
                          VALUES ('$flightNumber', '$aircraftId', '$flightDate')";
     $conn->exec($sqlFlights);
     $sqlFlights = $conn->lastInsertId();
-
-
-
+    
+    for ($i = 0; $i <=4 ; $i++){
+        $addCrew = "INSERT INTO crew_flight (crew_id,flight_id) VALUES ($i,$sqlFlights)";
+        $conn->exec($addCrew);
+    }
+    
 
     // Commit the transaction
     $conn->commit();
+    echo "<script>alert($sqlFlights) </script>";
     echo "<script>alert('Data inserted successfully.'); window.location.href = '../browser.php';</script>";
+    
     exit;
 
 } catch (PDOException $exception) {
@@ -34,6 +39,8 @@ try {
 
 // Close the database connection
 $conn = NULL;
+
+
 
 ?>
 
