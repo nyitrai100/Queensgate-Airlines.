@@ -186,18 +186,20 @@
                 <input type="date" id="flightDate" name="flightDate" required>
             </div>
             <div>
+                </div>
 
-
-            <?php
-                    if (!empty($_SESSION['crew'])) {
-
-                        foreach ($_SESSION['crew'] as $crew) {
-                                echo "<input type='checkbox' name='crewList[]' value=".$crew['id'].">$crew[first_name] $crew[last_name]</input>";
+                <div class="crew-div">
+                <label for="crewList">Crew members</label>
+                <?php
+                        if (!empty($_SESSION['crew'])) {
+    
+                            foreach ($_SESSION['crew'] as $crew) {
+                                    echo "<input type='checkbox' name='crewList[]' value=".$crew['id']." id='$crew[first_name]' >$crew[first_name] $crew[last_name]</input> <br></br>";
+                            }
                         }
-                    }
-                    ?>
-
-            </div>
+                        ?>
+    
+                </div>
             <!-- <div class="control-form">
                                 <label class="destinationCheckbox">Destination
                                     <input type="checkbox" name="destinationCheckbox" id="destinationCheckbox" onclick="display(), disappear()">

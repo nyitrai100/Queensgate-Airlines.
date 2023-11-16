@@ -358,7 +358,7 @@ h1.title {
 .myform input {
     border: 0;
     outline: 0;
-    height: 50px;
+    height: 16px;
     background: #FFF;
     width: 100%;
     border-radius: 5px;
@@ -369,6 +369,19 @@ h1.title {
     border: 2px solid transparent;
     transition: border 250ms;
 }
+
+
+
+.crew-div{
+  background-color: red;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  flex-wrap: wrap;
+  color: white;
+}
+
+
 
 .full-width {
     grid-column: -1 / 1
