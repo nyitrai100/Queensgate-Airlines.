@@ -1,5 +1,4 @@
 <?php 
- session_start();
  include("./Database/dbh.php");
 ?>
 
@@ -23,27 +22,10 @@
         <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/>
     </svg>
     </a> -->
-
-    <?php echo "<p class='accountEmailFlightDetails'>{$_SESSION['user']}</p>"; ?>
-          <!-- navigation bar starts -->
-          <nav class="nav-container mb-2">
-            <ul class="nav justify-content-end">
-                <li class="nav-item">
-                <a class="nav-link-flightDetails" href="./index.php">Home</a>
-                </li>
-                <li class="nav-item">
-                <?php if(isset($_SESSION["user"]))
-                {echo "<a class='nav-link-flightDetails' href='./browser.php'>Browser</a>"; } ?>
-                
-                </li>
-                <li class="nav-item">
-                <?php if(isset($_SESSION["user"]))
-                {echo "<a class='nav-link-flightDetails' href='./Authentication/logout.php'>Log out</a>"; }
-                       else{echo " <a class='nav-link-flightDetails' href='./Authentication/login_process.php' onclick='openLogin()'>Login</a>"; }       ?>           
-                </li>
-            </ul>
-        </nav>
-     <!-- navigation bar ends -->
+    <?php 
+ include("header.php");
+ ?>
+   
 
 
 <?php

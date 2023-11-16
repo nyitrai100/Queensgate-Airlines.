@@ -50,6 +50,14 @@ try {
     $flight_aircraft_tables = $flightsAircraftDetails ->fetchAll();
 
     $_SESSION['flight_aircraft'] = $flight_aircraft_tables;
+
+    //GET CREW
+    $crew = "SELECT * FROM crew";
+
+    $crewDetails = $conn->query($crew);
+    $crewDetails = $crewDetails->fetchAll();
+    $_SESSION['crew'] = $crewDetails;
+
 ?>
 
 

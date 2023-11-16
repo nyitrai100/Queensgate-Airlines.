@@ -1,12 +1,11 @@
 <?php 
-session_start();
 include("../Database/dbh.php");
 
 // Taking all values from the form data(input)
-$flightNumber = $_REQUEST['flightNumber'];
-$aircraftId = $_REQUEST['aircraftMadeBy'];
-$flightDate = $_REQUEST['flightDate'];
-
+$flightNumber = $_POST['flightNumber'];
+$aircraftId = $_POST['aircraftMadeBy'];
+$flightDate = $_POST['flightDate'];
+$crewList = $_POST['crewList'];
 
 try {
     // Start a transaction
@@ -18,15 +17,15 @@ try {
     $conn->exec($sqlFlights);
     $sqlFlights = $conn->lastInsertId();
     
-    for ($i = 0; $i <=4 ; $i++){
-        $addCrew = "INSERT INTO crew_flight (crew_id,flight_id) VALUES ($i,$sqlFlights)";
+    foreach ($crewList as $crew) {
+        $addCrew = "INSERT INTO crew_flight (crew_id,flight_id) VALUES ($crew,$sqlFlights)";
         $conn->exec($addCrew);
     }
     
 
     // Commit the transaction
     $conn->commit();
-    echo "<script>alert($sqlFlights) </script>";
+    echo "<script>alert($crewList[0]) </script>";
     echo "<script>alert('Data inserted successfully.'); window.location.href = '../browser.php';</script>";
     
     exit;

@@ -1,5 +1,4 @@
 <?php 
- session_start();
  include("./Database/dbh.php");
  include("./phpFunctions/search.php")
 ?>
@@ -19,26 +18,11 @@
     <title>Queensgate Airlines</title>
 </head>
 <body class="browser-body">
-    <?php echo "<p class='accountEmailBrowser'>{$_SESSION['user']}</p>"; ?>
-          <!-- navigation bar starts -->
-          <nav class="nav-container mb-2">
-            <ul class="nav justify-content-end">
-                <li class="nav-item">
-                <a class="nav-link-browser" href="./index.php">Home</a>
-                </li>
-                <li class="nav-item">
-                <?php if(isset($_SESSION["user"]))
-                {echo "<a class='nav-link-browser' href='./browser.php'>Browser</a>"; } ?>
-                
-                </li>
-                <li class="nav-item">
-                <?php if(isset($_SESSION["user"]))
-                {echo "<a class='nav-link-browser' href='./Authentication/logout.php'>Log out</a>"; }
-                       else{echo " <a class='nav-link-browser' href='./Authentication/login_process.php' onclick='openLogin()'>Login</a>"; }       ?>           
-                </li>
-            </ul>
-        </nav>
-     <!-- navigation bar ends -->
+
+<?php 
+ include("header.php");
+ ?>
+ 
 
      <!-- hero container starts -->
      <div class="bg-image-browser py-lg-14 py-12 padding-hero mb-5 ">
@@ -201,7 +185,34 @@
                 <label for="flightDate">Flight Date</label>
                 <input type="date" id="flightDate" name="flightDate" required>
             </div>
+            <div>
 
+
+            <?php
+                    if (!empty($_SESSION['crew'])) {
+
+                        foreach ($_SESSION['crew'] as $crew) {
+                                echo "<input type='checkbox' name='crewList[]' value=".$crew['id'].">$crew[first_name] $crew[last_name]</input>";
+                        }
+                    }
+                    ?>
+
+            </div>
+            <!-- <div class="control-form">
+                                <label class="destinationCheckbox">Destination
+                                    <input type="checkbox" name="destinationCheckbox" id="destinationCheckbox" onclick="display(), disappear()">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="flightNumberCheckbox">Flight Number
+                                    <input type="checkbox" name="flightNumberCheckbox" id="flightNumberCheckbox" onclick="display(), disappear()">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="dateCheckbox">Date
+                                    <input type="checkbox" name="dateCheckbox" id="dateCheckbox" onclick="display(), disappear()">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div> -->
+                            
             <div class="button">
                 <button id="register">Submit</button>
             </div>
