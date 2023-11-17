@@ -372,16 +372,20 @@ h1.title {
 
 
 
-.crew-div{
+/* .crew-div{
   background-color: red;
   display: flex;
   flex-direction: row;
-  width: 100%;
-  flex-wrap: wrap;
+  width: 200%;
   color: white;
+  border: 2px solid red;
 }
-
-
+.crewMember{
+  min-width: 200px;
+} */
+.crew-div{
+  width:200%;
+}
 
 .full-width {
     grid-column: -1 / 1

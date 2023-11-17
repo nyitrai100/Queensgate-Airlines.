@@ -25,8 +25,7 @@ try {
 
     // Commit the transaction
     $conn->commit();
-    echo "<script>alert($crewList[0]) </script>";
-    echo "<script>alert('Data inserted successfully.'); window.location.href = '../browser.php';</script>";
+    echo "<script> window.location.href = '../browser.php';</script>";
     
     exit;
 

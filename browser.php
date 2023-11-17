@@ -192,13 +192,16 @@
                 <label for="crewList">Crew members</label>
                 <?php
                         if (!empty($_SESSION['crew'])) {
-    
+                            echo "<div class='d-flex flex-wrap'>";
                             foreach ($_SESSION['crew'] as $crew) {
-                                    echo "<div class='d-flex flex-wrap'>";
-                                    echo "<input type='checkbox' name='crewList[]' value=".$crew['id']." id='$crew[first_name]' >$crew[first_name] $crew[last_name]</input> <br></br>";
+                                    echo "<div class='d-flex'>";
+                                    echo "<label for='crewList[]' class='text-light'>$crew[first_name] $crew[last_name] </label>";
+                                    echo "<input type='checkbox' class='crewMember' name='crewList[]' value=".$crew['id']." id='$crew[first_name]' />";
                                     echo "</div>";
 
                             }
+                            echo "</div>";
+
                         }
                         ?>
     
