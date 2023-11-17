@@ -194,7 +194,10 @@
                         if (!empty($_SESSION['crew'])) {
     
                             foreach ($_SESSION['crew'] as $crew) {
+                                    echo "<div class='d-flex flex-wrap'>";
                                     echo "<input type='checkbox' name='crewList[]' value=".$crew['id']." id='$crew[first_name]' >$crew[first_name] $crew[last_name]</input> <br></br>";
+                                    echo "</div>";
+
                             }
                         }
                         ?>

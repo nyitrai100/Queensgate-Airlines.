@@ -1,4 +1,8 @@
-<?php echo "<p class='accountEmail'>{$_SESSION['user']}</p>"; ?>
+<?php 
+if(isset($_SESSION["user"]))
+{echo "<p class='accountEmail'>{$_SESSION['user']}</p>"; }
+else{echo"<p class='accountEmail'></p>";}
+?>
                 
           <!-- navigation bar starts -->
           <nav class="nav-container mb-2">
