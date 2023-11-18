@@ -1,27 +1,9 @@
 <?php 
  include("./Database/dbh.php");
- include("./phpFunctions/search.php")
+ include("./phpFunctions/search.php");
+ include("header.php");
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- bootstrap links starts -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <!-- bootstrap links ends -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
-    <!-- stylesheets start -->
-    <link rel="stylesheet" href="style.css?v=<?php echo time(); ?>">
-    <!-- stylesheets ends -->
-    <title>Queensgate Airlines</title>
-</head>
-<body class="browser-body">
-
-<?php 
- include("header.php");
- ?>
  
 
      <!-- hero container starts -->
