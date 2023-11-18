@@ -1,14 +1,11 @@
 <?php 
 include("../Database/dbh.php");
-
-// Taking all values from the form data(input)
 $flightNumber = $_POST['flightNumber'];
 $aircraftId = $_POST['aircraftMadeBy'];
 $flightDate = $_POST['flightDate'];
 $crewList = $_POST['crewList'];
 
 try {
-    // Start a transaction
     $conn->beginTransaction();
 
     // Insert into flights table
@@ -22,23 +19,17 @@ try {
         $conn->exec($addCrew);
     }
     
-
-    // Commit the transaction
     $conn->commit();
     echo "<script> window.location.href = '../browser.php';</script>";
     
     exit;
 
 } catch (PDOException $exception) {
-    // Rollback the transaction if an error occurs
     $conn->rollBack();
     echo "Error: " . $exception->getMessage();
 }
 
-// Close the database connection
 $conn = NULL;
-
-
 
 ?>
 

@@ -5,7 +5,6 @@
 
 
 <?php
-// session_start();
 $flightNum = $_GET['flight_num'] ?? null;
 if (isset($_SESSION['flights'])) {
     $flight = null;

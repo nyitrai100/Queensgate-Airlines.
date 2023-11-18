@@ -1,6 +1,5 @@
 
 <?php 
-
 $searchTermDest = "";
 $searchTermNum = "";
 $searchTermDate = "";
