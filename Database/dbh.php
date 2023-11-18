@@ -58,6 +58,7 @@ try {
     $crewDetails = $crewDetails->fetchAll();
     $_SESSION['crew'] = $crewDetails;
 
+
 ?>
 
 
