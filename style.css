@@ -17,53 +17,10 @@
     font-weight: 900;
     background-color: white;
     border-radius: 25%;
-    /* padding:6px; */
 }
 
-/* .nav-link-browser{
-  color: black;
-  font-weight: 500;
-  text-shadow: black;
-  font-size: medium;
-  margin-bottom: -10px;
-  margin-right: 30px;
-} */
-/* .nav-link-browser:hover{
-  color:white;
-  text-shadow: black;
-  font-weight: 900;
-  background-color: black;
-  border-radius: 25%;
-  padding:6px;
-  text-decoration: none;
-} */
-
-/* .nav-link-flightDetails{
-  color: black;
-  font-weight: 500;
-  text-shadow: black;
-  font-size: medium;
-  margin-bottom: -10px;
-  margin-right: 30px;
-} */
-/* .nav-link-flightDetails:hover{
-  color:white;
-  text-shadow: black;
-  font-weight: 900;
-  background-color: black;
-  border-radius: 25%;
-  padding:6px;
-  text-decoration: none;
-} */
 
 .nav-container{
-    /* position: relative;
-    top: 52px;
-    margin-top: -88px;
-    z-index: 2;
-    background-color: transparent;
-    background: linear-gradient(rgba(31, 30, 30, 0.176), rgba(1, 1, 1, 0.28));
-    padding-bottom: 15px; */
     position: relative;
     top: 64px;
     margin-top: -103px;
@@ -93,30 +50,10 @@
     text-shadow: white;
     font-size: medium;
     background-color: linear-gradient(rgba(31, 30, 30, 0.176), rgba(1, 1, 1, 0.28));
-    /* background: linear-gradient(rgba(169, 166, 166, 0.176), rgba(235, 228, 228, 0.28)); */
     padding-right: 25px;
-    /* padding-bottom: 25px; */
     margin-top: -5px;
 }
-/* .accountEmailBrowser{
-    display: flex;
-    justify-content: flex-end;
-    width: 100vw;
-    color: black;
-    background-color: black;
-    margin-left: -15px;
-    margin-bottom: 25px;
-} */
 
-/* .accountEmailFlightDetails{
-  display: flex;
-  justify-content: flex-end;
-  margin-bottom: 25px;
-} */
-
-.vh-150{
-  height: 150vh;
-}
 /* nav css ends */
 
 /* hero-page starts */
@@ -126,23 +63,12 @@
     line-height: 60px;
     font-size: 30px;
 }
-/* .bg-img{
-    background-image: url("https://images.pexels.com/photos/1450353/pexels-photo-1450353.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
-    background-size: cover; 
-     width:100%;
-} */
 .bg-img{
     background: linear-gradient(rgba(255, 255, 255, 0.176), rgba(255, 255, 255, 0.28)),
     url("https://images.pexels.com/photos/1450353/pexels-photo-1450353.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
     background-size: cover; 
     width:100%;
 }
-/* .bg-image-browser{
-       background-image: url("https://images.unsplash.com/photo-1528824036966-36325e3140fa?auto=format&fit=crop&q=80&w=2940&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
-      background-size:cover; 
-      max-width: 100%; 
-      border-bottom: 20px solid black;
-} */
 .bg-image-browser{
     background: linear-gradient(rgba(255, 255, 255, 0.117), rgba(255, 255, 255, 0.532)),
     url("https://images.unsplash.com/photo-1528824036966-36325e3140fa?auto=format&fit=crop&q=80&w=2940&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
@@ -368,17 +294,6 @@ h1.title {
 
 
 
-/* .crew-div{
-  background-color: red;
-  display: flex;
-  flex-direction: row;
-  width: 200%;
-  color: white;
-  border: 2px solid red;
-}
-.crewMember{
-  min-width: 200px;
-} */
 .crew-div{
   width:200%;
 }
@@ -394,15 +309,6 @@ h1.title {
 }
 
 .button button {
-    /* border: 0;
-    outline: 0;
-    width: 120px;
-    height: 50px;
-    border-radius: 50px;
-    color: #FFF;
-    font-weight: bold;
-    font-size: .9rem;
-    cursor: pointer; */
     margin-left: -51px;
     margin-top: 50px;
     margin-bottom: 15px;
@@ -431,31 +337,7 @@ h1.title {
 }
 #flightDate{
 height: 25px;}
-/* 
-#firstName1,#firstName2,#firstName3,#firstName4{
-    width:12vw;
-    display: inline;
-}
-#lastName1,#lastName2,#lastName3,#lastName4{
-    width:12vw;
-    display: inline;
-}
 
-#crewdiv1, #crewdiv2, #crewdiv3, #crewdiv4{
-    display: flex;
-    flex-direction: row;
-    margin-top:10px;
-    justify-content: space-between;
-
-}
-#firstNameLabel1, #firstNameLabel2, #firstNameLabel3, #firstNameLabel4, #lastNameLabel1, #lastNameLabel2, #lastNameLabel3, #lastNameLabel4{
- display: flex;
- align-self: center;
- justify-content: flex-start;
-
-  padding-left: 10px;
-
-} */
 /* uploading form ends */ 
 
 
