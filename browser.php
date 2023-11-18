@@ -8,11 +8,8 @@
 
      <!-- hero container starts -->
      <div class="bg-image-browser py-lg-14 py-12 padding-hero mb-5 ">
-      <!-- title starts -->
       <h6 class=" display-4 fw-bold flex text-center text-black shadow-title2 browser-MT"> Browser Page </h6>
-       <!-- title ends -->
        <div class="container pt-5 browserHeroMarginTop">
-        <!-- row -->
             <div class="row align-items-center">
             <div class="col-lg-3 col-12">
                 <div>
@@ -35,7 +32,10 @@
         </div>
         </div>
         <!-- hero container ends -->
-        <div class="table-section">
+
+    <!-- table section starts -->
+    <div class="table-section">
+
         <!-- search starts -->
             <div class="container justify-content-center"> 
             <div class="row">
@@ -85,17 +85,14 @@
                     </form>
                 </div>
             </div>
-        </div>
+             </div>
     <!-- search ends -->
    
-
-   <!-- table section starts -->
    <section class="container mt-5" >
      <?php  if(isset($_SESSION["user"]) && $_SESSION["admin"])
                 {echo " <button onclick='openFrom()'> Add a flight</button>";} ?>
      <?php
         if (!empty($flights)) {
-            // Output the table
             echo "<table class='flightTableSize'>
                     <thead>
                         <tr class='flightsTableTitles'>
@@ -159,16 +156,13 @@
                     }
                     ?>
                 </select>
-
-
+                    </div>
+                    <div class="control-from" id="flightDateForm">
+                        <label for="flightDate">Flight Date</label>
+                        <input type="date" id="flightDate" name="flightDate" required>
+                    </div>
+                <div>
             </div>
-
-            <div class="control-from" id="flightDateForm">
-                <label for="flightDate">Flight Date</label>
-                <input type="date" id="flightDate" name="flightDate" required>
-            </div>
-            <div>
-                </div>
 
                 <div class="crew-div">
                 <label for="crewList">Crew members</label>
@@ -180,15 +174,12 @@
                                     echo "<label for='crewList[]' class='text-light'>$crew[first_name] $crew[last_name] </label>";
                                     echo "<input type='checkbox' class='crewMember' name='crewList[]' value=".$crew['id']." id='$crew[first_name]' />";
                                     echo "</div>";
-
                             }
                             echo "</div>";
-
                         }
                         ?>
     
-                </div>
-                            
+                </div>                 
             <div class="button">
                 <button id="register">Submit</button>
             </div>
