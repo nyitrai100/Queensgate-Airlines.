@@ -110,7 +110,7 @@
                                 <td class='flightsTableFlight2'>{$flight['flight_num']}</td>
                                 <td class='flightsTableFlight3'>{$flight['flight_origin']}</td>
                                 <td class='flightsTableFlight4'>{$flight['flight_destination']}</td>
-                                <td class='flightsTableFlight5'><a href='flightDetails.php?flight_num={$flight["flight_num"]}'> More </a> </td>
+                                <td class='flightsTableFlight5'><a href='flightDetails.php?flight_id={$flight["flight_id"]}'> More </a> </td>
                                 </tr>";
                     }
         

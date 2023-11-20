@@ -1,20 +1,21 @@
 <?php 
  include("./Database/dbh.php");
  include("header.php");
+
 ?>
 
 
 <?php
-$flightNum = $_GET['flight_num'] ?? null;
+$flightNum = $_GET['flight_id'] ?? null;
 if (isset($_SESSION['flights'])) {
-    $flight = null;
+    $flightRow = null;
     foreach ($_SESSION['flights'] as $storedFlight) {
-        if ($storedFlight['flight_num'] == $flightNum) {
-            $flight = $storedFlight;
+        if ($storedFlight['flight_id'] == $flightNum) {
+            $flightRow = $storedFlight;
             break;
         }
     }
-    if ($flight) {
+    if ($flightRow) {
         echo "
 			<div class='section_our_solution'>
             <div class='row'>
@@ -34,9 +35,9 @@ if (isset($_SESSION['flights'])) {
                         </div>
                         <div class='solu_description'>
                         <p>
-                        ID: {$flight['flight_id']}<br/>
-                        Date: {$flight['flight_date']} <br/>
-                        Flight Number: {$flight['flight_num']}
+                        ID: {$flightRow['flight_id']}<br/>
+                        Date: {$flightRow['flight_date']} <br/>
+                        Flight Number: {$flightRow['flight_num']}
                         </p>
                         </div>
                     </div>
@@ -52,7 +53,7 @@ if (isset($_SESSION['flights'])) {
                         </div>
                         <div class='solu_description'>
                         <p>
-                        {$flight['crew_members']}
+                        {$flightRow['crew_members']}
                         </p>
                         </div>
                     </div>
@@ -72,8 +73,8 @@ if (isset($_SESSION['flights'])) {
                         </div>
                         <div class='solu_description'>
                         <p>
-                        From: {$flight['flight_origin']} <br/> 
-                        To: {$flight['flight_destination']}
+                        From: {$flightRow['flight_origin']} <br/> 
+                        To: {$flightRow['flight_destination']}
                         </p>
                         </div>
                     </div>
@@ -91,8 +92,8 @@ if (isset($_SESSION['flights'])) {
                         </div>
                         <div class='solu_description'>
                         <p>
-                            Aircraft make: {$flight['aircraft_make']} <br/>
-                            Aricraft model: {$flight['aircraft_model']}
+                            Aircraft make: {$flightRow['aircraft_make']} <br/>
+                            Aricraft model: {$flightRow['aircraft_model']}
                         </p>
                         </div>
                     </div>
