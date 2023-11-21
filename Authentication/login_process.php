@@ -8,9 +8,18 @@ try {
     echo "Oh no, there was a problem" . $exception->getMessage();
 }
 
-if (isset($_POST['email'])) {
+if (isset($_POST['submit'])) {
     $email = $_POST['email'];
     $password = $_POST['password'];
+
+    if(empty($email) || empty($password)){
+        header("Location: ../index.php?error=emptyfield");
+        exit();
+    }
+
+
+
+
     $admin = ("SELECT * FROM users");
 
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);

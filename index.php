@@ -35,6 +35,14 @@
               <span class="close-btn text-white p-2 cursor-pointer" onclick="closeLogin()">&times;</span>
             </div>
             <h1>Login</h1>
+            <?php
+              if(isset($_GET['error'])){
+                if($_GET['error'] == 'emptyfield'){
+                  echo "<p class='text-danger'>Please fill all the fields</p>";
+
+                }
+              }
+            ?>
             <p class="text-muted"> Please enter your login and password!</p>                    
             <input type="text" name="email" placeholder="Username">
             <input type="password" name="password" placeholder="Password">
@@ -64,4 +72,9 @@
 <?php 
 include("footer.php");
 ?>
-
+<script>
+  var urlParams = new URLSearchParams(window.location.search);
+  if(urlParams.get('error') != null){
+    openLogin();
+  }
+</script>
