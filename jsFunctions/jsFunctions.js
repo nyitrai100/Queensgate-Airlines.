@@ -22,10 +22,6 @@ function closeLogin() {
 }
 
 
-// validation for log in
-
-
-
 
 
 //search js

@@ -126,12 +126,34 @@
         <span class="close-btn text-white p-1 cursor-pointer" onclick="closeForm()">&times;</span>
     </div>
     <div class="form">
+        <div class="flex text-center">
+        <?php
+              if(isset($_GET['error'])){
+                if($_GET['error'] == 'emptyFlightNumber' && empty($flightNumber)){
+                  echo "<p class='text-danger'>Please check your flight number</p>";
+
+                }
+                if($_GET['error'] == 'emptyAircraftId' && empty($aircraftId)){
+                  echo "<p class='text-danger'>Please check  the aircraftId</p>";
+
+                }
+                if($_GET['error'] == 'emptyFlightDate' && empty($flightDate)){
+                  echo "<p class='text-danger'>Please select the Flight date</p>";
+
+                }
+                if($_GET['error'] == 'emptyCrewList' && empty($crewList)){
+                  echo "<p class='text-danger'>Please select crews</p>";
+
+                }
+              }
+            ?>
+        </div>
         <form action="./phpFunctions/uploadFlight.php" class="myform" method="post">
             <h1 class="title">Upload a flight</h1></br>
             <div class="control-from">
                 <label for="flightNumber">Flight Number</label>
-                <select id="flightNumber" name="flightNumber"  required>
-                <option value=''>Select </option>
+                <select id="flightNumber" name="flightNumber"  >
+                <option>Select </option>
                 <?php
                     if (!empty($flight_number_tables)) {
                         foreach ($flight_number_tables as $flight_number_table) {
@@ -145,7 +167,7 @@
             <div class="control-from">
 
                 <label for="aircraftMadeBy">Aircraft Made by</label>
-                <select id="aircraftMadeBy" name="aircraftMadeBy"  required>
+                <select id="aircraftMadeBy" name="aircraftMadeBy" >
                 <option value=''>Select </option>
                 <?php
                     if (!empty($flight_aircraft_tables)) {
@@ -159,7 +181,7 @@
                     </div>
                     <div class="control-from" id="flightDateForm">
                         <label for="flightDate">Flight Date</label>
-                        <input type="date" id="flightDate" name="flightDate" required>
+                        <input type="date" id="flightDate" name="flightDate" >
                     </div>
                 <div>
             </div>
@@ -181,7 +203,7 @@
     
                 </div>                 
             <div class="button">
-                <button id="register">Submit</button>
+                <button id="register" type="submit" name="submit">Submit</button>
             </div>
         </form>
     </div>
@@ -195,6 +217,13 @@
 <?php
 include("footer.php");
 ?>
+
+<script>
+  var urlParams = new URLSearchParams(window.location.search);
+  if(urlParams.get('error') != null){
+    openFrom();
+  }
+</script>
 
 
 

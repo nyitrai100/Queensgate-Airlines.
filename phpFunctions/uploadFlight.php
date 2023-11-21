@@ -5,31 +5,51 @@ $aircraftId = $_POST['aircraftMadeBy'];
 $flightDate = $_POST['flightDate'];
 $crewList = $_POST['crewList'];
 
-try {
-    $conn->beginTransaction();
-
-    // Insert into flights table
-    $sqlFlights = "INSERT INTO flights (flight_num, aircraft_id, date) 
-                         VALUES ('$flightNumber', '$aircraftId', '$flightDate')";
-    $conn->exec($sqlFlights);
-    $sqlFlights = $conn->lastInsertId();
-    
-    foreach ($crewList as $crew) {
-        $addCrew = "INSERT INTO crew_flight (crew_id,flight_id) VALUES ($crew,$sqlFlights)";
-        $conn->exec($addCrew);
+if(isset($_POST['submit'])){
+    if(empty($flightNumber)){
+            header("Location: ../browser.php?error=emptyFlightNumber");
+            exit();
     }
-    
-    $conn->commit();
-    echo "<script> window.location.href = '../browser.php';</script>";
-    
-    exit;
+    if(empty($aircraftId)){
+            header("Location: ../browser.php?error=emptyAircraftId");
+            exit();
+    }
+    if(empty($flightDate)){
+            header("Location: ../browser.php?error=emptyFlightDate");
+            exit();
+    }
+    if(empty($crewList)){
+            header("Location: ../browser.php?error=emptyCrewList");
+            exit();
+    }
 
-} catch (PDOException $exception) {
-    $conn->rollBack();
-    echo "Error: " . $exception->getMessage();
+
+    try {
+        $conn->beginTransaction();
+
+        // Insert into flights table
+        $sqlFlights = "INSERT INTO flights (flight_num, aircraft_id, date) 
+                            VALUES ('$flightNumber', '$aircraftId', '$flightDate')";
+        $conn->exec($sqlFlights);
+        $sqlFlights = $conn->lastInsertId();
+        
+        foreach ($crewList as $crew) {
+            $addCrew = "INSERT INTO crew_flight (crew_id,flight_id) VALUES ($crew,$sqlFlights)";
+            $conn->exec($addCrew);
+        }
+        
+        $conn->commit();
+        echo "<script> window.location.href = '../browser.php';</script>";
+        
+        exit;
+
+    } catch (PDOException $exception) {
+        $conn->rollBack();
+        echo "Error: " . $exception->getMessage();
+    }
+
+    $conn = NULL;
+
 }
 
-$conn = NULL;
-
 ?>
-
