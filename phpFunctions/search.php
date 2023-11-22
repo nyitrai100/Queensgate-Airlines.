@@ -32,3 +32,4 @@ if (isset($_GET['search_origin']) && isset($_GET['search_dest']) && isset($_GET[
     $flights = $_SESSION['flights'];
 }
 ?>
+f
