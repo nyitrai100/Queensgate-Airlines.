@@ -337,6 +337,10 @@ h1.title {
 }
 #flightDate{
 height: 25px;}
+.errors{
+padding-top: 36;
+margin-bottom: -38px;
+}
 
 /* uploading form ends */ 
 

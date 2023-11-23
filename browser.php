@@ -126,24 +126,12 @@
         <span class="close-btn text-white p-1 cursor-pointer" onclick="closeForm()">&times;</span>
     </div>
     <div class="form">
-        <div class="flex text-center">
+        <div class="flex text-start errors">
         <?php
+          
               if(isset($_GET['error'])){
-                if($_GET['error'] == 'emptyFlightNumber' && empty($flightNumber)){
-                  echo "<p class='text-danger'>Please check your flight number</p>";
-
-                }
-                if($_GET['error'] == 'emptyAircraftId' && empty($aircraftId)){
-                  echo "<p class='text-danger'>Please check  the aircraftId</p>";
-
-                }
-                if($_GET['error'] == 'emptyFlightDate' && empty($flightDate)){
-                  echo "<p class='text-danger'>Please select the Flight date</p>";
-
-                }
-                if($_GET['error'] == 'emptyCrewList' && empty($crewList)){
-                  echo "<p class='text-danger'>Please select crews</p>";
-
+                if($_GET['error'] == 'empty'){
+                  echo "<p class='text-danger'>Please fill out your form!</p>";
                 }
               }
             ?>

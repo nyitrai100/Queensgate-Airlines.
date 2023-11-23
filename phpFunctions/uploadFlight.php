@@ -5,24 +5,12 @@ $aircraftId = $_POST['aircraftMadeBy'];
 $flightDate = $_POST['flightDate'];
 $crewList = $_POST['crewList'];
 
-if(isset($_POST['submit'])){
-    if(empty($flightNumber)){
-            header("Location: ../browser.php?error=emptyFlightNumber");
-            exit();
-    }
-    if(empty($aircraftId)){
-            header("Location: ../browser.php?error=emptyAircraftId");
-            exit();
-    }
-    if(empty($flightDate)){
-            header("Location: ../browser.php?error=emptyFlightDate");
-            exit();
-    }
-    if(empty($crewList)){
-            header("Location: ../browser.php?error=emptyCrewList");
-            exit();
-    }
 
+if(isset($_POST['submit'])){
+    if(empty($flightNumber) || empty($aircraftId) || empty($flightDate) || empty($crewList)){
+            header("Location: ../browser.php?error=empty");
+            exit();
+    }
 
     try {
         $conn->beginTransaction();
