@@ -153,7 +153,7 @@
 
             </div>
             <div class="control-from">
-<!-- dfd -->
+
                 <label for="aircraftMadeBy">Aircraft Made by</label>
                 <select id="aircraftMadeBy" name="aircraftMadeBy" >
                 <option value=''>Select </option>
