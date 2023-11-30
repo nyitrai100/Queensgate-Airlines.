@@ -87,7 +87,7 @@
             </div>
              </div>
     <!-- search ends -->
-   <!-- sdsd -->
+   
    <section class="container mt-5" >
      <?php  if(isset($_SESSION["user"]) && $_SESSION["admin"])
                 {echo " <button onclick='openFrom()'> Add a flight</button>";} ?>
