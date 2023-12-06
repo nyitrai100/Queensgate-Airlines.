@@ -112,6 +112,6 @@ if (isset($_SESSION['flights'])) {
 
 </body>
 </html>
-<!-- dfd -->
+
 
 
