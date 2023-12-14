@@ -51,7 +51,7 @@ try {
 
     $_SESSION['flight_aircraft'] = $flight_aircraft_tables;
 
-    //GET CREW
+    //Get crew
     $crew = "SELECT * FROM crew";
 
     $crewDetails = $conn->query($crew);

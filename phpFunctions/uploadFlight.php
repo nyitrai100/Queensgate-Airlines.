@@ -15,7 +15,7 @@ if(isset($_POST['submit'])){
     try {
         $conn->beginTransaction();
 
-        // Insert into flights table
+        
         $sqlFlights = "INSERT INTO flights (flight_num, aircraft_id, date) 
                             VALUES ('$flightNumber', '$aircraftId', '$flightDate')";
         $conn->exec($sqlFlights);
