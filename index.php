@@ -58,12 +58,12 @@
     <div class="container-fluid main-content">
       <section class="about-section">
         <h2 class="pb-5">Welcome to Queensgate Airlines</h2>
-        <p>Discover Your Next Flight Experience with Queensgate Airlines</p>
-        <p>Our platform makes it easy to find the best flights to your desired destinations.</p>
-        <p>Explore local flights and gather the information you need effortlessly by logging in and browsing our flight listings.</p>
-        <p>Actively contribute by adding new flights to our platform, enhancing our list with comprehensive and up-to-date information.</p>   
-        <p>Questions? Feel free to reach out to us anytime.</p>
-        <p>Thank you for choosing Queensgate Airlines for your flight booking needs!</p>
+        <p>Discover your next flight with Us</p>
+        <p> You can find your the best flight on our platform!</p>
+        <p>Log in and browsing our flights without any limitation</p>
+        <p>Actively uploading new flights, keep it updated our database</p>
+        <p>Any question? Feel free to message us!</p>
+        <p>Thank you for choosing Queensgate Airlines</p>
     </section>
       </div>
 </div>
